@@ -613,13 +613,13 @@ describe('PlaceFormModal', () => {
     render(<PlaceFormModal {...defaultProps} />);
     await user.type(screen.getByPlaceholderText('Search places...'), 'Eiffel');
 
-    expect(await screen.findByText('TREK')).toBeInTheDocument();
+    expect(await screen.findByText('Journey')).toBeInTheDocument();
   });
 
   it('FE-PLANNER-PLACEFORM-022d: the typed-ahead list marks the OpenStreetMap rows as such', async () => {
     // The keystroke path asks both indexes at once, so the name the response
     // carries for the whole list ('trek-places') is true of the call and wrong
-    // for half the rows. Marking every suggestion TREK is how a list that did
+    // for half the rows. Marking every suggestion Journey is how a list that did
     // contain OpenStreetMap places read as if it never had.
     const user = userEvent.setup();
     server.use(
@@ -637,7 +637,7 @@ describe('PlaceFormModal', () => {
     render(<PlaceFormModal {...defaultProps} />);
     await user.type(screen.getByPlaceholderText('Search places...'), 'Tokyo Station');
 
-    expect(await screen.findByText('TREK')).toBeInTheDocument();
+    expect(await screen.findByText('Journey')).toBeInTheDocument();
     expect(await screen.findByText('OpenStreetMap')).toBeInTheDocument();
   });
 
@@ -662,7 +662,7 @@ describe('PlaceFormModal', () => {
     await user.type(screen.getByPlaceholderText('Search places...'), 'Eiffel');
     await user.keyboard('{Enter}');
 
-    expect(await screen.findByText('TREK')).toBeInTheDocument();
+    expect(await screen.findByText('Journey')).toBeInTheDocument();
     expect(await screen.findByText('OpenStreetMap')).toBeInTheDocument();
   });
 
@@ -1921,7 +1921,7 @@ describe('PlaceFormModal remaining branches', () => {
  *
  * The corridor search reads OpenStreetMap and misses a good share of the chargers
  * actually standing at a junction, so "add manually" opens THIS form rather than a
- * bespoke one: its typed-ahead search is the one the rest of TREK uses. Three things
+ * bespoke one: its typed-ahead search is the one the rest of Journey uses. Three things
  * change and nothing else does, which is what the first two tests here pin.
  *
  * Where the stop goes cannot be decided when the dialog opens, because nothing has been

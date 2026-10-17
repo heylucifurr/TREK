@@ -2,7 +2,7 @@ import React from 'react';
 import { WORLD_GRID_H, WORLD_GRID_W, WORLD_LAT_BOT, WORLD_LAT_TOP, worldDots } from './worldDots';
 
 /**
- * The login backdrop: TREK's own coastlines as a dot map, with routes lighting up
+ * The login backdrop: Journey's own coastlines as a dot map, with routes lighting up
  * between cities across it.
  *
  * The dots come from the Atlas admin-0 bundle, baked into worldDots.ts — the login

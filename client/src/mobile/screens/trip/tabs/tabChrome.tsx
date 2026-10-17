@@ -130,7 +130,7 @@ export function StatusDot({ color }: { color: string }) {
  * desktop breakpoint (#2440). Sits outside the card's body button (buttons
  * cannot nest, and a tap in the frame must not open the detail sheet), and the
  * frame follows the host colour scheme like the desktop detail slots do, so a
- * kit plugin that goes dark with TREK keeps compositing transparently.
+ * kit plugin that goes dark with Journey keeps compositing transparently.
  */
 export function ReservationPluginSlots({ tripId, reservationId }: { tripId: number; reservationId: number }) {
   const plugins = usePluginStore(s => s.plugins).filter(p => p.type === 'widget' && p.slot === 'reservation-detail')

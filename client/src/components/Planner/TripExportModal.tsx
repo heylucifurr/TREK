@@ -43,7 +43,7 @@ interface TripExportModalProps {
 }
 
 /**
- * Every way a trip leaves TREK, in one dialog: the day plan as a PDF, the
+ * Every way a trip leaves Journey, in one dialog: the day plan as a PDF, the
  * bookings as a calendar (a one-off .ics or a live subscription) and the map
  * data as GPX in the three scopes a device actually wants.
  *

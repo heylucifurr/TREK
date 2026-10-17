@@ -775,7 +775,7 @@ describe('plugin-API version gating', () => {
     const err = await createPluginRuntime(new DatabaseService(dbConn)).activate('future-api').catch((e) => e);
     expect(err).toBeInstanceOf(PluginDependencyError);
     expect(err).toMatchObject({ code: 'API_VERSION_INCOMPATIBLE' });
-    expect(err.message).toBe('plugin requires plugin-API v2; this TREK supports v1');
+    expect(err.message).toBe('plugin requires plugin-API v2; this Journey supports v1');
     cleanup('future-api');
   });
 
@@ -790,7 +790,7 @@ describe('plugin-API version gating', () => {
     }
   });
 
-  it('activates normally when apiVersion is within what this TREK supports', async () => {
+  it('activates normally when apiVersion is within what this Journey supports', async () => {
     seedApi('current-api', 1);
     const rt = createPluginRuntime(new DatabaseService(dbConn));
     await rt.activate('current-api');

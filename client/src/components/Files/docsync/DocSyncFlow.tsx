@@ -7,7 +7,7 @@ import { Badge } from './DocSyncBits'
 export type SyncDirection = 'both' | 'pull' | 'push'
 
 export interface FlowHoldings {
-  /** Documents this trip has in TREK. */
+  /** Documents this trip has in Journey. */
   inTrek: number
   /** How many of them the store is holding. */
   atProvider: number

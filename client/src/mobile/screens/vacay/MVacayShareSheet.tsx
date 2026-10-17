@@ -15,7 +15,7 @@ interface MVacayShareSheetProps {
 
 /**
  * Read-only calendar sharing sheet (#444/#667): share your own calendar with
- * another TREK user (view only, no fusion), see who shares with you (with a
+ * another Journey user (view only, no fusion), see who shares with you (with a
  * per-person overlay eye toggle) and stop shares in both directions.
  */
 export default function MVacayShareSheet({ open, onClose }: MVacayShareSheetProps) {

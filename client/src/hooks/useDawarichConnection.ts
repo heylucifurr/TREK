@@ -95,7 +95,7 @@ export function useDawarichConnection(): DawarichConnectionState {
         setCapabilities(data.capabilities)
       })
       .catch(() => {
-        // A failed read of our own settings is a TREK problem, not a Dawarich
+        // A failed read of our own settings is a Journey problem, not a Dawarich
         // one — the card stays in its empty state rather than claiming the
         // instance is unreachable.
       })
@@ -160,9 +160,9 @@ export function useDawarichConnection(): DawarichConnectionState {
         const message = translateError(result.error ?? null) ?? t('dawarich.test.failed')
         // The reason underneath, where the server managed to name one. The codes
         // above are deliberately vague so an English sentence from Dawarich does
-        // not land on a German install, but "TREK could not reach that address"
+        // not land on a German install, but "Journey could not reach that address"
         // alone leaves a self-hoster with nothing to act on: it reads the same
-        // whether the host is down, the certificate was rejected, or TREK refused
+        // whether the host is down, the certificate was rejected, or Journey refused
         // a private address on purpose and would need ALLOW_INTERNAL_NETWORK to
         // permit it. The panel gets both; the toast stays one line.
         setProbeMessage(result.errorDetail ? `${message} (${result.errorDetail})` : message)

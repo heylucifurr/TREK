@@ -40,7 +40,7 @@ function SettingsPageDesktop(): React.ReactElement {
       : []),
     { id: 'offline', label: t('settings.tabs.offline'), icon: CloudOff },
     { id: 'account', label: t('settings.tabs.account'), icon: User },
-    // About is where the project lives: what TREK is, where to report a bug,
+    // About is where the project lives: what Journey is, where to report a bug,
     // where to support it. A customer of a hosted instance is the audience for
     // none of that, so the tab goes and the sidebar footer below carries the one
     // thing that has to stay — the link to the source (AGPL §13).

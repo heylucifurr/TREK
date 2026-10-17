@@ -4,7 +4,7 @@ import type { DawarichTrack, DawarichTrackDay } from '@trek/shared'
  * Everything both map renderers need to agree on for the recorded-route
  * overlay, in one module.
  *
- * TREK draws no line twice the same way — Leaflet takes `<Polyline>` elements
+ * Journey draws no line twice the same way — Leaflet takes `<Polyline>` elements
  * and GL takes a GeoJSON source — so the *shape* cannot be shared. The colour,
  * the day ordering and the identity of a segment can, and they are exactly what
  * would drift between the two renderers if each carried its own copy.
@@ -55,7 +55,7 @@ export interface DawarichTrailSegment {
   id: string
   date: string
   color: string
-  /** `[lat, lng]`, TREK's internal order. GeoJSON flips it at the boundary. */
+  /** `[lat, lng]`, Journey's internal order. GeoJSON flips it at the boundary. */
   points: Array<[number, number]>
   mode: string | null
   startedAt: string
@@ -156,7 +156,7 @@ export function trailGeoJson(segments: DawarichTrailSegment[]): {
       },
       geometry: {
         type: 'LineString' as const,
-        // Internal order is [lat, lng] everywhere in TREK; GeoJSON wants the
+        // Internal order is [lat, lng] everywhere in Journey; GeoJSON wants the
         // other one, and this is the single place the overlay flips it.
         coordinates: segment.points.map((point): [number, number] => [point[1], point[0]]),
       },

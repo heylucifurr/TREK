@@ -8,7 +8,7 @@
  * therefore collapse into one: the second gets the first one's cached response
  * instead of being applied, and the user loses an edit with no error anywhere.
  *
- * `crypto.randomUUID` needs a secure context, and TREK's own quickstart is plain
+ * `crypto.randomUUID` needs a secure context, and Journey's own quickstart is plain
  * http://localhost:3000 with LAN installs on http://192.168.x.x — so on the
  * deployments the README documents, randomUUID is undefined and the fallback is
  * what actually runs. It has to be a real one. `getRandomValues` has no

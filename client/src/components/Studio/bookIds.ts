@@ -6,7 +6,7 @@
  * a line drift, and this one had already drifted in its slice length.
  *
  * `getRandomValues` rather than `Math.random`, for the reason
- * `utils/randomId.ts` gives at greater length: TREK's own quickstart is plain
+ * `utils/randomId.ts` gives at greater length: Journey's own quickstart is plain
  * http on a LAN address, where `crypto.randomUUID` is undefined but
  * `getRandomValues` still works. A book document is shared over a websocket and
  * merged by whoever saves last, so two editors minting the same id for two

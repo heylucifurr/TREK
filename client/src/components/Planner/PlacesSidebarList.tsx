@@ -27,7 +27,7 @@ export function PlacesList({ header, ...S }: SidebarState & {
     <div className="trek-stagger" style={{ flex: 1, overflowY: 'auto', minHeight: 0 }} ref={scrollContainerRef} onScroll={(e) => onScrollTopChange?.((e.currentTarget as HTMLElement).scrollTop)}>
       {header}
       {filtered.length === 0 ? (
-        /* The mascot and one line, the shape every other empty state in TREK has.
+        /* The mascot and one line, the shape every other empty state in Journey has.
            The add link stays as the state's action: an empty list of places is
            one of the few that has an obvious next step. */
         <EmptyState

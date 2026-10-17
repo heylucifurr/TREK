@@ -39,7 +39,7 @@ import FigureBadge from './FigureBadge'
  * half that earns the width — a range can be typed as one number or worked out from what
  * the vehicle is made of, and the gauge shows the second turning into the first as it is
  * typed. Nothing here asks the router about a vehicle; OSM has no idea what car this is,
- * and neither has TREK.
+ * and neither has Journey.
  */
 
 /** Empty means no limit, and so does zero — both are stored as 0 and read as off. */

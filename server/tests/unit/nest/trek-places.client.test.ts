@@ -256,7 +256,7 @@ describe('reading the body', () => {
   it('refuses a body past the megabyte cap instead of buffering it', async () => {
     // The first chunk is under the cap, the second takes it over.
     stubStreamingFetch([BIG, BIG]);
-    await expect(trekPlacesSearch('x')).rejects.toThrow('TREK Places API response too large');
+    await expect(trekPlacesSearch('x')).rejects.toThrow('Journey Places API response too large');
   });
 
   it('drops the connection instead of draining the rest of an oversized body', async () => {
@@ -264,7 +264,7 @@ describe('reading the body', () => {
     // which is the case that has a connection left to drop. Cancelling a stream
     // that already ended is a no-op and would assert nothing.
     stubStreamingFetch([BIG, BIG, BIG]);
-    await expect(trekPlacesSearch('x')).rejects.toThrow('TREK Places API response too large');
+    await expect(trekPlacesSearch('x')).rejects.toThrow('Journey Places API response too large');
     expect(streamCancelled).toBe(true);
   });
 
@@ -290,7 +290,7 @@ describe('reading the body', () => {
     // Not unbounded — a hostile or broken upstream must not be able to hand the
     // instance an endless body just because the path is the bulk one.
     stubStreamingFetch(Array.from({ length: 8 }, () => BIG));
-    await expect(trekPlacesArea(BOX, 1)).rejects.toThrow('TREK Places API response too large');
+    await expect(trekPlacesArea(BOX, 1)).rejects.toThrow('Journey Places API response too large');
     expect(streamCancelled).toBe(true);
   });
 });

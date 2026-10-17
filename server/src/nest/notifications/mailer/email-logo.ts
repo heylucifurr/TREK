@@ -1,12 +1,12 @@
 import type Mail from 'nodemailer/lib/mailer';
 
 /**
- * The TREK mark in the mail header, sent as a PNG part of the message and
+ * The Journey mark in the mail header, sent as a PNG part of the message and
  * addressed from the HTML by Content-ID (#2507).
  *
  * It used to be an SVG inlined as a data: URI. Gmail strips data: URIs, Outlook
  * blocks them and neither of them renders SVG, so most people saw a broken image
- * with "TREK" as its alt text. An inline part referenced through cid: is what
+ * with "Journey" as its alt text. An inline part referenced through cid: is what
  * Gmail, Outlook and Apple Mail all display, and unlike a hosted image it does
  * not depend on the instance being reachable from the recipient's mail provider.
  *

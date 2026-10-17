@@ -198,7 +198,7 @@ export default function DawarichAcceptDialog({
           />
         </div>
 
-        {/* TREK's own pickers, not the browser's. A native `type="date"` paints
+        {/* Journey's own pickers, not the browser's. A native `type="date"` paints
             itself from the OS locale and a native `type="time"` ignores the 12h/24h
             setting outright (#2067) — and neither follows the colour scheme. The
             date column is the wide one because a localized date is long and a

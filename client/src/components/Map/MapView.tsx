@@ -27,7 +27,7 @@ function alternativeLabelIcon(label: string, note: string, background: string, a
     className: '',
     // `font-family` spelled out: a divIcon sits inside `.leaflet-container`, whose own
     // stylesheet sets Helvetica/Arial on everything in it. Without this the label is the
-    // one piece of TREK chrome on the map that is not in the app's typeface.
+    // one piece of Journey chrome on the map that is not in the app's typeface.
     html: `<span style="display:inline-flex;flex-direction:column;align-items:flex-start;white-space:nowrap;background:${background};color:${ALT_LABEL_TEXT};border-radius:11px;padding:6px 11px;font-family:var(--font-system);font-size:13px;font-weight:600;line-height:1.25;box-shadow:0 2px 10px rgba(0,0,0,.35);cursor:pointer;transition:none;${outline}"><span>${escapeHtml(label)}</span>${second}</span>`,
     iconSize: [0, 0],
     iconAnchor: [0, 0],

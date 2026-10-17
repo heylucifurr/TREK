@@ -6,7 +6,7 @@ import { useTranslation } from '../../i18n'
 /**
  * The header steps up a level on each click, days → months → years, and a
  * pick steps back down. Mirrors CustomDateTimePicker, so a person who has
- * learnt one calendar in TREK knows the other. Without it the only way to a
+ * learnt one calendar in Journey knows the other. Without it the only way to a
  * different year was one month at a time, which on a photo picker asked to
  * cover a trip three years back meant thirty-six clicks (#2318).
  */

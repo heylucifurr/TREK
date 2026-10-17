@@ -3,7 +3,7 @@
  *
  * The gap this closes: an offline instance has the trip's own places and
  * nothing else. "Find a pharmacy near the hotel" had nothing to answer from,
- * because every place lookup went to a server. The TREK Places index can hand
+ * because every place lookup went to a server. The Journey Places index can hand
  * over an area in one request, so it does, once, next to the map tiles.
  *
  * Deliberately modest. This is not a country download and not a background

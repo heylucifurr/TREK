@@ -377,8 +377,8 @@ describe('SharedTripPage', () => {
     });
   });
 
-  describe('FE-PAGE-SHARED-015: TREK branding footer is rendered', () => {
-    it('renders the Shared via TREK footer', async () => {
+  describe('FE-PAGE-SHARED-015: Journey branding footer is rendered', () => {
+    it('renders the Shared via Journey footer', async () => {
       renderSharedTrip('test-token');
 
       await waitFor(() => {
@@ -1702,7 +1702,7 @@ describe('SharedTripPage', () => {
       expect(screen.queryByRole('button', { name: /try again/i })).not.toBeInTheDocument();
     });
 
-    // A reverse proxy that has no upstream for TREK (Traefik while the
+    // A reverse proxy that has no upstream for Journey (Traefik while the
     // container is stopped or still in its start period, nginx with a missing
     // location) answers 404 on its own. That is the restart window of the
     // report, not a dead link.

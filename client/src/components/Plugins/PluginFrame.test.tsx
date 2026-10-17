@@ -650,7 +650,7 @@ describe('PluginFrame', () => {
   });
 
   describe('trek:session:clear', () => {
-    it('FE-PLUGINS-FRAME-034: wipes only this plugin scope, leaving TREK and trip keys alone', () => {
+    it('FE-PLUGINS-FRAME-034: wipes only this plugin scope, leaving Journey and trip keys alone', () => {
       const { iframe, posted } = mountFrame({ tripId: '42' });
       fromFrame(iframe, { type: 'trek:session:set', requestId: 'a', key: 'x', value: 1 });
       fromFrame(iframe, { type: 'trek:session:set', requestId: 'b', key: 'y', value: 2 });

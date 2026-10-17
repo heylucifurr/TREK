@@ -199,7 +199,7 @@ describe('trailGeoJson', () => {
       mode: null,
     })
     expect(feature.geometry.type).toBe('LineString')
-    // TREK stores [lat, lng]; GeoJSON wants [lng, lat]. Berlin sits at 52 N
+    // Journey stores [lat, lng]; GeoJSON wants [lng, lat]. Berlin sits at 52 N
     // 13 E, so a missed flip lands the recording off the coast of Ghana.
     expect(feature.geometry.coordinates).toEqual([
       [13.405, 52.52],

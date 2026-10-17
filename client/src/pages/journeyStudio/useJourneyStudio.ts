@@ -31,7 +31,7 @@ const WORK_PADDING_PX = 72
 export const STUDIO_INSET = 16
 
 /**
- * TREK Studio — the book designer's shell state.
+ * Journey Studio — the book designer's shell state.
  *
  * Studio is a child route of the journey, so the journey it edits is already in
  * the store by the time this runs; it only asks for a load when someone lands on

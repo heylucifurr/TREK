@@ -392,7 +392,7 @@ export default function MAdminSettingsSection({ admin, t }: MAdminSettingsSectio
           <MAdminField label={t('admin.placesProvider.title')} hint={t('admin.placesProvider.subtitle')}>
             {/* The app's own picker rather than a bare <select>: a native one is
                 drawn by the operating system and was the one control on this page
-                that did not belong to TREK. Same sheet the settings selects use. */}
+                that did not belong to Journey. Same sheet the settings selects use. */}
             <button
               type="button"
               disabled={savingPlacesProvider}

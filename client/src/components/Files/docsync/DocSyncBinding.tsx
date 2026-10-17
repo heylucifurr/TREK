@@ -213,7 +213,7 @@ export default function DocSyncBinding({
                 </span>
               </Row>
 
-              {/* Only where TREK could not subscribe itself. Papra's webhook CRUD
+              {/* Only where Journey could not subscribe itself. Papra's webhook CRUD
                   is closed to API keys and Nextcloud's needs admin rights, so the
                   person pastes this in by hand; polling carries it either way. */}
               {link.webhookUrl && (

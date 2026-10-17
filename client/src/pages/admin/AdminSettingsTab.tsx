@@ -366,7 +366,7 @@ export default function AdminSettingsTab({ admin, t }: AdminSettingsTabProps): R
         </div>
 
           {/* API Keys.
-              The card itself stays on a managed install: the TREK index needs no key,
+              The card itself stays on a managed install: the Journey index needs no key,
               and which keyed provider answers place search is the admin's call there
               too (server managed.ts). What folds away is the operator's: the keys,
               what a lookup costs, and the per-place Google switches. Those switches

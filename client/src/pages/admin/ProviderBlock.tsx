@@ -2,7 +2,7 @@ import React from 'react'
 
 interface ProviderBlockProps {
   title: string
-  /** Optional label sitting on the top border, like the one on the TREK block. */
+  /** Optional label sitting on the top border, like the one on the Journey block. */
   badge?: string
   /**
    * `accent` marks the recommended path, `muted` a neutral one, `caution` a
@@ -15,7 +15,7 @@ interface ProviderBlockProps {
 }
 
 /**
- * One provider inside the API card, in the same shape as the TREK block above
+ * One provider inside the API card, in the same shape as the Journey block above
  * it, so the page reads as a list of comparable options rather than one
  * highlighted thing and some loose fields underneath.
  */

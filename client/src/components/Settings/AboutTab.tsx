@@ -24,7 +24,7 @@ export default function AboutTab({ appVersion }: Props): React.ReactElement {
         className="text-content-secondary"
         style={{ fontSize: 'calc(13px * var(--fs-scale-body, 1))', lineHeight: 1.6, marginBottom: 6, marginTop: -4 }}
       >
-        {/* The stock line calls TREK self-hosted and points at 'your own server'.
+        {/* The stock line calls Journey self-hosted and points at 'your own server'.
             Both are true for the reader who set it up and neither is for a customer
             of a hosted instance, so the mode picks the sentence rather than the
             wording being watered down for everybody. */}

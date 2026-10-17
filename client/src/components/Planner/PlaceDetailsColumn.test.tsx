@@ -471,7 +471,7 @@ describe('PlaceDetailsColumn — hours and rating', () => {
  *
  * It used to be a line of grey text plus, when no Google key was set, a panel
  * telling the reader to go and ask an administrator for one. The mascot says the
- * same thing in the shape every other empty state in TREK uses, and whose key is
+ * same thing in the shape every other empty state in Journey uses, and whose key is
  * missing is not this panel's business.
  */
 describe('PlaceDetailsColumn — nothing found', () => {

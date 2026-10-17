@@ -126,7 +126,7 @@ export default function LoginPage(): React.ReactElement {
         <div className="takeoff-aurora takeoff-aurora-b" />
 
         <div className="takeoff-mark">
-          <img src="/logo-light.svg" alt="TREK" style={{ height: 'clamp(58px, 5.2vw, 84px)' }} />
+          <img src="/logo-light.svg" alt="Journey" style={{ height: 'clamp(58px, 5.2vw, 84px)' }} />
           <p
             style={{
               margin: '12px 0 0',
@@ -369,7 +369,7 @@ export default function LoginPage(): React.ReactElement {
         </div>
 
         {/* Coastlines as a dot map, with routes lighting up between cities across
-            it. The geometry is TREK's own Atlas bundle, baked in at build time
+            it. The geometry is Journey's own Atlas bundle, baked in at build time
             because this screen is unauthenticated. */}
         <LoginWorld />
 
@@ -382,7 +382,7 @@ export default function LoginPage(): React.ReactElement {
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 12 }}>
             <img
               src="/logo-light.svg"
-              alt="TREK"
+              alt="Journey"
               style={{
                 height: 'clamp(58px, 5.2vw, 84px)',
                 filter: 'drop-shadow(0 2px 10px rgba(4,8,20,0.55)) drop-shadow(0 0 34px rgba(4,8,20,0.45))',
@@ -442,7 +442,7 @@ export default function LoginPage(): React.ReactElement {
             className="mobile-logo"
           >
             <style>{`@media(min-width:1024px){.mobile-logo{display:none!important}}`}</style>
-            <img src="/logo-dark.svg" alt="TREK" style={{ height: 48 }} />
+            <img src="/logo-dark.svg" alt="Journey" style={{ height: 48 }} />
             <p
               style={{
                 margin: 0,

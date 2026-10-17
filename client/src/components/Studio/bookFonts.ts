@@ -103,7 +103,7 @@ export const BOOK_FONTS: Record<BookFontId, BookFont> = {
   },
 }
 
-// Geist Sans is deliberately absent: it is TREK's own subtext face, part of the
+// Geist Sans is deliberately absent: it is Journey's own subtext face, part of the
 // app's voice rather than the book's, and a book set in the interface font
 // reads as a screenshot of the app.
 

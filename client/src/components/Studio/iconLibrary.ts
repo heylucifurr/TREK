@@ -8,7 +8,7 @@ import type { LucideIcon } from 'lucide-react'
  * ── Why the whole set, and why it costs nothing ──────────────────────────
  *
  * The obvious worry with a fourteen-hundred-icon library is the bundle, and it
- * is worth being precise about why it does not apply. TREK already pulls lucide
+ * is worth being precise about why it does not apply. Journey already pulls lucide
  * in whole: `SystemNoticeModal` and `PluginIcon` both index the namespace with a
  * computed key, which no bundler can tree-shake, and both sit in the eager entry
  * graph. The library ships either way, so enumerating it here adds names, not
@@ -110,7 +110,7 @@ export function iconLabel(name: string): string {
  * The component for a stored name.
  *
  * The same resolver the plugin system uses, so a book that outlives an icon
- * behaves the way the rest of TREK does with a name it no longer knows: it
+ * behaves the way the rest of Journey does with a name it no longer knows: it
  * draws the fallback rather than leaving a hole where a drawing was.
  */
 export function iconComponent(name: string): LucideIcon {

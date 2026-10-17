@@ -45,7 +45,7 @@ describe('CRS_GCJ02', () => {
     // this drifts, tiles are requested at the wrong zoom or the wrong origin and
     // the map is visibly broken rather than subtly offset.
     expect(CRS_GCJ02.scale(12)).toBe(L.CRS.EPSG3857.scale(12))
-    expect(CRS_GCJ02.code).toBe('TREK:GCJ02')
+    expect(CRS_GCJ02.code).toBe('Journey:GCJ02')
   })
 
   it('measures distance in WGS-84, since that is what it is handed', () => {

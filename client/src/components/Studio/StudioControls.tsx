@@ -22,7 +22,7 @@ import ToggleSwitch from '../Settings/ToggleSwitch'
  *   **Choose several** is a row of chips that carry a tick when they are on,
  *     because a set with three of seven picked has to be readable at a glance.
  *   **On or off** is the app's switch, on its own line beside the words —
- *     the one control in TREK that already means exactly that.
+ *     the one control in Journey that already means exactly that.
  *
  * A section can be folded away, which is the other half of the answer: a
  * property panel is a reference, and a reference nobody can collapse is a wall.
@@ -143,7 +143,7 @@ export function Picks<T extends string>({ value, options, onToggle }: {
   )
 }
 
-/** On or off, said the way the rest of TREK says it. */
+/** On or off, said the way the rest of Journey says it. */
 export function Switch({ label, on, onToggle }: { label: string; on: boolean; onToggle: () => void }) {
   return (
     <div className="st-switch">

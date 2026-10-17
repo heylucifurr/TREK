@@ -88,7 +88,7 @@ export function useJourneyDetail() {
   // The switch gates the REQUEST, not just the rendering: the endpoint ships
   // full unthinned geometry, which for a trip carrying a season of recorded
   // drives is megabytes fetched on every journey open for a map nobody asked
-  // for. It stays untouched on the server so TREK Studio, which freezes the
+  // for. It stays untouched on the server so Journey Studio, which freezes the
   // same endpoint's output into a saved book, keeps the set it laid out with.
   const [tracks, setTracks] = useState<JourneyTrack[]>(NO_TRACKS)
   // Gate on the journey the route actually names: loadJourney leaves the previous
@@ -498,7 +498,7 @@ export function useJourneyDetail() {
   const STUDIO_INSET = 16
 
   /**
-   * Open TREK Studio.
+   * Open Journey Studio.
    *
    * The button's own rect travels along in the navigation state so the panel can
    * grow out of the button instead of appearing from nowhere. The origin is

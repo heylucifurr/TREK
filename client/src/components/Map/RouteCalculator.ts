@@ -65,7 +65,7 @@ function routeBaseFor(profile: 'driving' | 'walking' | 'cycling'): string {
  * days: a pair on a day boundary is asked for on its own, and a request with nothing in
  * the middle has nothing to refuse.
  *
- * Correct as well as convenient here. TREK's waypoints are places somebody stops at, not
+ * Correct as well as convenient here. Journey's waypoints are places somebody stops at, not
  * shape hints, and the way out of a dead end IS the way back in, and the constraint was
  * buying a detour even where it did not refuse outright.
  *
@@ -81,7 +81,7 @@ function uTurnParam(waypoints: readonly Waypoint[]): string {
 /**
  * `fetch`, with the request counted.
  *
- * Every route TREK draws goes out from here, and nowhere else, which makes this the one
+ * Every route Journey draws goes out from here, and nowhere else, which makes this the one
  * place that can answer how much routing an instance really does — the number behind
  * "could we host an engine ourselves". Counted: how many requests, of what kind, how
  * many waypoints, roughly how far, and whether the host refused. Not counted, because it
@@ -328,7 +328,7 @@ export function generateGoogleMapsUrl(places: Waypoint[]): string | null {
 /** A stop that can carry its name into a deep link that has somewhere to put one. */
 export type NamedWaypoint = Waypoint & { name?: string | null }
 
-/** TREK's route profiles in CoMaps' vocabulary; a plugin profile has no equivalent and drives. */
+/** Journey's route profiles in CoMaps' vocabulary; a plugin profile has no equivalent and drives. */
 function coMapsRouteType(profile: RouteProfileKey): string {
   if (profile === 'walking') return 'pedestrian'
   if (profile === 'cycling') return 'bicycle'
@@ -708,7 +708,7 @@ async function routeAvoidingWithLegs(
 /**
  * The snap positions out of an OSRM answer, or undefined if it did not describe them.
  *
- * OSRM reports this in every response and TREK has thrown it away since the first route
+ * OSRM reports this in every response and Journey has thrown it away since the first route
  * was drawn. `distance` is the straight line from the coordinate we sent to the road it
  * used; it is recomputed from the two points when the field is missing or nonsense, so a
  * mirror that trims its answers still produces a usable gap rather than a wrong one.
@@ -843,7 +843,7 @@ export function sameRoad(a: RoadLine, b: RoadLine): boolean {
 /**
  * Hosts that have already answered "I do not do exclude", by base URL.
  *
- * Both public hosts TREK ships with reject the parameter outright with HTTP 400: the
+ * Both public hosts Journey ships with reject the parameter outright with HTTP 400: the
  * upstream car profile is built without excludable classes, and only a self-hosted OSRM
  * built through the MLD pipeline supports it. Without this, every long leg on a default
  * install pays two extra requests to be told twice that it cannot have what it asked for,

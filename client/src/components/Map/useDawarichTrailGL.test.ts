@@ -173,7 +173,7 @@ describe('useDawarichTrailGL', () => {
     expect(gl.spies.addSource).toHaveBeenCalledTimes(1)
   })
 
-  it('FE-DAWARICH-TRAILUI-021: builds the source and both layers under TREK-prefixed ids, anchored below the planned route', () => {
+  it('FE-DAWARICH-TRAILUI-021: builds the source and both layers under Journey-prefixed ids, anchored below the planned route', () => {
     const gl = fakeGlMap({ styleLayers: ['trip-route-casing'] })
     mount({ map: gl.map, ready: true, track: track([DAY_ONE]), before: 'trip-route-casing' })
 
@@ -259,7 +259,7 @@ describe('useDawarichTrailGL', () => {
     mount({ map: gl.map, ready: true, track: track([DAY_ONE, DAY_TWO]) })
     const features = gl.drawn()?.features ?? []
     expect(features).toHaveLength(2)
-    // TREK stores [lat, lng] everywhere; GeoJSON wants the other order, and the
+    // Journey stores [lat, lng] everywhere; GeoJSON wants the other order, and the
     // overlay is the single place that flips it. Getting this backwards puts
     // Vienna in the Indian Ocean.
     expect(features[0].geometry.coordinates).toEqual([[16.37, 48.2], [16.38, 48.21]])

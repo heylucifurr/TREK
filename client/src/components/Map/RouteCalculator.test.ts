@@ -597,7 +597,7 @@ describe('generateCoMapsUrl', () => {
     )
   })
 
-  it('FE-COMP-ROUTECALCULATOR-018: TREK profiles map onto CoMaps travel modes', () => {
+  it('FE-COMP-ROUTECALCULATOR-018: Journey profiles map onto CoMaps travel modes', () => {
     expect(generateCoMapsUrl([eiffel, louvre], 'driving')).toContain('type=vehicle')
     expect(generateCoMapsUrl([eiffel, louvre], 'cycling')).toContain('type=bicycle')
     // A plugin router has no CoMaps equivalent, so it falls back rather than
@@ -640,10 +640,10 @@ describe('a self-hosted routing engine', () => {
     expect(asked).toContain('osrm.example.org')
   })
 
-  it('FE-COMP-ROUTECALCULATOR-022: OSRM’s own profile names are used, not TREK’s', async () => {
+  it('FE-COMP-ROUTECALCULATOR-022: OSRM’s own profile names are used, not Journey’s', async () => {
     useOwnRouter('https://osrm.example.org')
     let asked = ''
-    // TREK says "walking" and "cycling"; osrm-routed serves "foot" and "bike".
+    // Journey says "walking" and "cycling"; osrm-routed serves "foot" and "bike".
     server.use(http.get('https://osrm.example.org/route/v1/foot/:coords', ({ request }) => {
       asked = request.url
       return HttpResponse.json(buildOsrmRouteResponse())
@@ -783,7 +783,7 @@ describe('calculateAlternatives', () => {
   })
 
   it('FE-COMP-ROUTECALCULATOR-032: a host that rejects exclude is only asked once', async () => {
-    // Both public hosts TREK ships with answer 400 here, so without this every long leg
+    // Both public hosts Journey ships with answer 400 here, so without this every long leg
     // pays two extra requests against a one-per-second limit to be refused twice.
     const asked: string[] = []
     server.use(http.get('*/route/v1/driving/*', ({ request }) => {
@@ -915,7 +915,7 @@ describe('calculateAlternatives', () => {
   })
 
   it('FE-COMP-ROUTECALCULATOR-033: the snap positions come back with the route', async () => {
-    // OSRM reports these in every answer and TREK threw them away since the first route
+    // OSRM reports these in every answer and Journey threw them away since the first route
     // was drawn. Without them a place set back from the road looks like it is on the
     // route, while the drive really starts somewhere else.
     server.use(http.get('*/route/v1/driving/*', () => HttpResponse.json({

@@ -13,7 +13,7 @@ type PlaceLike = Pick<Place | AssignmentPlace, 'name' | 'lat' | 'lng'>
  * asks it to hand over to the app rather than staying on the web page.
  *
  * The coordinate is converted to GCJ-02 first. Amap reads `position` in its own
- * datum, and TREK stores WGS-84, so handing the stored value over unconverted
+ * datum, and Journey stores WGS-84, so handing the stored value over unconverted
  * drops the pin a few hundred metres away — far enough, in a city, to be the
  * wrong block. This is the mirror image of what the server does when it reads an
  * Amap result (see server/src/nest/maps/providers/amap.provider.ts).

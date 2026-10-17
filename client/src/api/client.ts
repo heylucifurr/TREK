@@ -227,7 +227,7 @@ apiClient.interceptors.response.use(
       // Pangolin header-auth extended compatibility mode: returns 401 with an
       // HTML body (a JS redirect page) instead of a 302.
       //
-      // A text/html 401 is NOT unambiguous on its own: several of TREK's own
+      // A text/html 401 is NOT unambiguous on its own: several of Journey's own
       // routes answer with res.status(401).send('Authentication required'),
       // which Express labels text/html. Tearing the service worker down for one
       // of those would cost the user offline mode for a proxy wall that isn't
@@ -586,7 +586,7 @@ export const adminApi = {
   pluginActivate: (id: string, consent?: boolean) => apiClient.post(`/admin/plugins/${id}/activate`, consent ? { consent: true } : {}).then(r => r.data),
   pluginDeactivate: (id: string) => apiClient.post(`/admin/plugins/${id}/deactivate`).then(r => r.data),
   // `version` pins the exact version to install (the rollback path); omitted, the server
-  // resolves the newest TREK-compatible version itself.
+  // resolves the newest Journey-compatible version itself.
   pluginUpdate: (id: string, version?: string) =>
     apiClient.post(`/admin/plugins/${id}/update`, version ? { version } : {}).then(r => r.data),
   // Release a per-plugin update hold (set by a deliberate non-latest install).
@@ -988,7 +988,7 @@ export const journeyApi = {
   // GPX tracks of the trips this journey's entries came from (#1260).
   listTracks: (id: number): Promise<JourneyTracksResponse> => apiClient.get(`/journeys/${id}/tracks`).then(r => r.data),
   // What the journey adds up to — distance, days, countries, the route (#1973).
-  // Read by TREK Studio, which freezes the answer into the book document.
+  // Read by Journey Studio, which freezes the answer into the book document.
   stats: (id: number): Promise<JourneyStats> => apiClient.get(`/journeys/${id}/stats`).then(r => r.data),
 
   // The Studio book (#1973). `book` is null for a journey that has none yet —
@@ -1170,7 +1170,7 @@ async function withCachedPlaces<T>(
  * What plugins implementing `searchProvider` found for the same query (#2221).
  *
  * Its own request beside the core one rather than a branch inside it: the core search
- * is TREK's own indexes and must not wait on, or fail with, somebody's plugin. This
+ * is Journey's own indexes and must not wait on, or fail with, somebody's plugin. This
  * answers with an empty list for every failure there is — no provider installed, one
  * that timed out, a 404 on an older server, the network gone — because a search that
  * breaks when an optional index is unwell is worse than one without it.
@@ -1384,7 +1384,7 @@ export const filesApi = {
  * How long the browser waits for a document-sync call that makes the server go
  * and ask the store.
  *
- * The shared 8 s on `apiClient` is right for TREK's own routes and wrong for
+ * The shared 8 s on `apiClient` is right for Journey's own routes and wrong for
  * these, for the reason `dawarich.ts` gives: the server allows each request to
  * a store 15 s by itself (20 s for Papra), a connection test may probe more
  * than once, and binding or unbinding first registers or removes a webhook at

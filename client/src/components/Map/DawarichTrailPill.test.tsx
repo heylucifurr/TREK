@@ -119,7 +119,7 @@ describe('DawarichTrailPill', () => {
     fireEvent.mouseEnter(button())
     act(() => { vi.advanceTimersByTime(300) })
 
-    // The whole reason this control carries TREK's own tooltip: the native one
+    // The whole reason this control carries Journey's own tooltip: the native one
     // never appears on a touch device, which is exactly where someone taps the
     // button to find out why the map is empty.
     expect(screen.getByRole('tooltip')).toHaveTextContent('Nothing was recorded on these dates')

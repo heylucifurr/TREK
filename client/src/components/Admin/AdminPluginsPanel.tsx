@@ -61,9 +61,9 @@ interface PluginRow {
   dependencies?: PluginDependencies
   dependencyStatus?: DependencyStatus
   dependencyIssues?: DependencyIssues
-  /** The TREK versions the plugin says it supports; null if it never declared any. */
+  /** The Journey versions the plugin says it supports; null if it never declared any. */
   trekRange?: string | null
-  /** The TREK this server is running — the server does the semver, the client just shows it. */
+  /** The Journey this server is running — the server does the semver, the client just shows it. */
   hostVersion?: string
   /** Non-null while the plugin runs outside its declared range on the operator's say-so. */
   trekRangeBypassed?: TrekRangeBypass | null
@@ -89,10 +89,10 @@ interface RegistryItem {
   icon?: string | null
   latest: string | null
   minTrekVersion: string | null
-  /** The latest version's declared TREK range; null on a legacy registry entry. */
+  /** The latest version's declared Journey range; null on a legacy registry entry. */
   trek?: string | null
   hostVersion?: string
-  /** Whether the LATEST version can be installed on this TREK. Computed server-side. */
+  /** Whether the LATEST version can be installed on this Journey. Computed server-side. */
   compatible?: boolean
   /** Newest installable version — the latest, an older fallback, or null if none fits. */
   latestCompatible?: string | null
@@ -112,7 +112,7 @@ interface VersionInfo {
   publishedAt: string | null
   size: number | null
   signed: boolean
-  /** The declared TREK requirement, or null when the entry carries no bounds at all. */
+  /** The declared Journey requirement, or null when the entry carries no bounds at all. */
   trek: string | null
   compatible: boolean
 }
@@ -281,7 +281,7 @@ interface DepChip { icon: React.ComponentType<{ size?: number; className?: strin
 
 // A plugin's declared dependencies as chips — a required addon (amber when that
 // addon is disabled), a plugin dependency (amber when missing / version-mismatched),
-// or the TREK version itself (amber when this server has outgrown the plugin's range,
+// or the Journey version itself (amber when this server has outgrown the plugin's range,
 // which is the one blocker the admin cannot fix by flipping something else on).
 function deriveDeps(p: PluginRow, t: T): DepChip[] {
   const out: DepChip[] = []
@@ -313,7 +313,7 @@ function deriveDeps(p: PluginRow, t: T): DepChip[] {
  * The server already decided compatibility — it owns the semver, and a second
  * implementation here would eventually disagree with the install gate and offer a button
  * that 400s. This only picks the wording. Note the middle case: when the newest release
- * has outrun this TREK but an older one still fits, offer THAT version rather than a dead
+ * has outrun this Journey but an older one still fits, offer THAT version rather than a dead
  * grey button. The plugin is perfectly usable, just not at its newest.
  */
 function installOffer(item: RegistryItem, t: T, ignoreTrekRange = false): { blocked: boolean; version?: string; label: string; title?: string; warn?: RangeWarning } {
@@ -465,7 +465,7 @@ export default function AdminPluginsPanel() {
 
   // Index the registry once per fetch: the version map the update badges read, plus the
   // whole entry (author key + signed flag) the trust badges and re-trust dialog need.
-  // The map holds latestCompatible — the newest version THIS TREK can install (computed
+  // The map holds latestCompatible — the newest version THIS Journey can install (computed
   // server-side) — not the absolute latest, so the banner never counts an update the
   // update endpoint would refuse.
   const indexRegistry = (items: RegistryItem[]) => {
@@ -611,8 +611,8 @@ export default function AdminPluginsPanel() {
   // the rollback fight the UI. The row carries its own "paused" marker + resume instead.
   const updateAvailable = (p: PluginRow) => !!(p.version && !p.updateHold && latest[p.id] && isNewer(latest[p.id], p.version))
   const resumeUpdates = (p: PluginRow) => act(p.id, () => adminApi.pluginResumeUpdates(p.id), t('admin.plugins.updatesResumed'))
-  // A newer version exists but this TREK can't install it (and it isn't the one on offer):
-  // said passively on the row, so the admin learns a TREK upgrade unlocks it instead of
+  // A newer version exists but this Journey can't install it (and it isn't the one on offer):
+  // said passively on the row, so the admin learns a Journey upgrade unlocks it instead of
   // wondering why no update shows. Null when the registry gives no range to point at.
   const newerIncompatible = (p: PluginRow): { version: string; range: string } | null => {
     const reg = regById[p.id]
@@ -715,7 +715,7 @@ export default function AdminPluginsPanel() {
   }
 
   // `version` pins the exact version to install (rollback / explicit switch); omitted,
-  // the server resolves the newest TREK-compatible version itself.
+  // the server resolves the newest Journey-compatible version itself.
   const runUpdate = (p: PluginRow, version?: string) => {
     setBusy(p.id); setMenu(null)
     return adminApi.pluginUpdate(p.id, version)
@@ -1395,8 +1395,8 @@ function InstalledRow({ p, t, busy, menu, setMenu, hasUpdate, latestVer, newerIn
             </button>
           </div>
         )}
-        {/* A newer version this TREK can't run — informational, never a button: the fix
-            is a TREK upgrade, so the row must not nag or offer a doomed install. */}
+        {/* A newer version this Journey can't run — informational, never a button: the fix
+            is a Journey upgrade, so the row must not nag or offer a doomed install. */}
         {newerIncompatible && (
           <div className="flex items-center gap-1.5 mt-1.5 text-[11.5px] text-content-faint">
             <Info size={13} className="shrink-0" />
@@ -1851,10 +1851,10 @@ function PluginDetailModal({ item, installed, busy, onInstall, onClose, t, local
             <div className="grid grid-cols-2 gap-x-6 gap-y-3 mt-2.5">
               {item.latest && <Meta k={t('admin.plugins.metaVersion')} v={`v${item.latest}`} />}
               {sizeKb !== null && <Meta k={t('admin.plugins.metaSize')} v={`${sizeKb} KB`} />}
-              {/* The range, not just its lower bound: "TREK 3.2.0+" reads as "and anything
+              {/* The range, not just its lower bound: "Journey 3.2.0+" reads as "and anything
                   newer", which is exactly the claim a `<4.0.0` upper bound denies. */}
               {(item.trek || item.minTrekVersion) && (
-                <Meta k={t('admin.plugins.metaRequires')} v={item.trek ? `TREK ${item.trek}` : `TREK ${item.minTrekVersion}+`} />
+                <Meta k={t('admin.plugins.metaRequires')} v={item.trek ? `Journey ${item.trek}` : `Journey ${item.minTrekVersion}+`} />
               )}
               {item.reviewedAt && <Meta k={t('admin.plugins.metaReviewed')} v={new Date(item.reviewedAt).toLocaleDateString(locale)} />}
               {typeof item.downloadCount === 'number' && item.downloadCount > 0 && (

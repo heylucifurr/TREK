@@ -126,7 +126,7 @@ const EN = {
   synced: (count: number) => `${count} new stays found`,
   syncError: 'Could not read Dawarich',
   syncRunning: 'A check is already running',
-  unreachable: 'TREK could not reach that address.',
+  unreachable: 'Journey could not reach that address.',
   unauthorized: 'Dawarich rejected the API key.',
   unknown: 'Something went wrong talking to Dawarich.',
 }
@@ -209,7 +209,7 @@ describe('useDawarichConnection: the initial read', () => {
     expect(result.current.url).toBe('')
     expect(result.current.connected).toBe(false)
     expect(result.current.lastSyncState).toBe('never')
-    // Our own endpoint failing is a TREK problem. An error toast here would send
+    // Our own endpoint failing is a Journey problem. An error toast here would send
     // the reader off editing a URL that was never at fault.
     expect(toast.error).not.toHaveBeenCalled()
   })

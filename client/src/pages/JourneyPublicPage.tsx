@@ -662,7 +662,7 @@ export default function JourneyPublicPage() {
             position: 'relative',
           }}
         >
-          <img src="/icons/icon-white.svg" alt="TREK" width={26} height={26} />
+          <img src="/icons/icon-white.svg" alt="Journey" width={26} height={26} />
         </div>
 
         <div
@@ -890,9 +890,9 @@ export default function JourneyPublicPage() {
             boxShadow: '0 1px 3px rgba(0,0,0,0.04)',
           }}
         >
-          <img src="/icons/icon.svg" alt="TREK" width={18} height={18} style={{ borderRadius: 4 }} />
+          <img src="/icons/icon.svg" alt="Journey" width={18} height={18} style={{ borderRadius: 4 }} />
           <span style={{ fontSize: 'calc(11px * var(--fs-scale-caption, 1))', color: '#9ca3af' }}>
-            {t('journey.public.sharedVia')} <strong style={{ color: '#6b7280' }}>TREK</strong>
+            {t('journey.public.sharedVia')} <strong style={{ color: '#6b7280' }}>Journey</strong>
           </span>
         </div>
         <div style={{ fontSize: 'calc(10px * var(--fs-scale-caption, 1))', color: '#d1d5db' }}>

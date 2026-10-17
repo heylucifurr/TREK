@@ -18,7 +18,7 @@ import { staysAtTheirPlaces } from './nightBookend'
 export type { RoadtripStop, RoadtripDay, RoadtripRoutes, QuietDay, AccessSpur, RoutedLeg, SnappedPoint } from '@trek/shared/roadtrip'
 
 /**
- * Gap between two routing requests. The public OSRM hosts TREK ships with state one
+ * Gap between two routing requests. The public OSRM hosts Journey ships with state one
  * request per second; a road trip asks for every leg of every day, so without spacing
  * the first handful answer and the rest come back 429.
  */
@@ -193,7 +193,7 @@ const asStop = (a: Assignment, ownerDayId: number, ownerIndex: number, accommoda
  *
  * A day is one request, not one per leg: the router already returns a leg for every
  * consecutive pair of the waypoints it is handed. Requests go out one after another
- * with a gap, because the public routing hosts TREK ships with allow about one per
+ * with a gap, because the public routing hosts Journey ships with allow about one per
  * second — but only the ones that actually reach the network are paced, so returning
  * to this view costs nothing.
  */

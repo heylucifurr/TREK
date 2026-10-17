@@ -7,7 +7,7 @@
  * set in, and only then the .pbf tiles themselves.
  *
  * It is cheaper than what it replaces, not more expensive. Measured over the
- * Berlin bounding box TREK would compute: raster z10-16 is 2237 requests and
+ * Berlin bounding box Journey would compute: raster z10-16 is 2237 requests and
  * 34.6 MB and stops being useful above z16, while vector z10-14 is 177 requests
  * and 32.1 MB and stays sharp at every zoom above that, because MapLibre scales
  * the z14 tile rather than asking for another one.

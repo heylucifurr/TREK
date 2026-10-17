@@ -1435,7 +1435,7 @@ export function useTripPlanner() {
    * How long the traveller stays at one stop.
    *
    * Writes `places.duration_minutes`, which the schedule has read since it was written
-   * and which nothing in TREK has ever been able to set — the road trip is the only place
+   * and which nothing in Journey has ever been able to set — the road trip is the only place
    * the value means anything, so it is the only place that edits it.
    *
    * Zero rather than null to clear: the update statement folds a null into "leave it
@@ -1925,7 +1925,7 @@ export function useTripPlanner() {
    * add the place under Days, drag it onto the right day, come back and mark it a
    * charging stop.
    *
-   * So this opens the form the rest of TREK adds places with, on nothing at all: no
+   * So this opens the form the rest of Journey adds places with, on nothing at all: no
    * place, no coordinates, no day. The traveller finds the charger in the form's own
    * typed-ahead search, which is the whole reason to use it, and where the stop belongs
    * is worked out at the save, from what the save carries.

@@ -249,7 +249,7 @@ export class McpTransportService {
     // Create a new per-user MCP server and session
     const server = new McpServer(
         {
-          name: 'TREK MCP',
+          name: 'Journey MCP',
           version: '1.0.0',
         },
         {

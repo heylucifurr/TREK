@@ -9,7 +9,7 @@ import { DAWARICH_TRAIL_CASING, trailGeoJson, trailSegments } from './dawarichTr
  * `DawarichTrailLayer`.
  *
  * The ids start with `trek-` because `applySatellite` finds the first layer
- * whose id carries one of TREK's own prefixes and inserts the satellite tile
+ * whose id carries one of Journey's own prefixes and inserts the satellite tile
  * beneath it. A layer named `dawarich-trail` would end up *under* the
  * satellite image and simply not be there when someone switched basemap on.
  *

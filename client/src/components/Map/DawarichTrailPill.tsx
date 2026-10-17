@@ -60,7 +60,7 @@ export function DawarichTrailPill({
         boxShadow: MAP_CONTROL_SHADOW,
       }}
     >
-      {/* TREK's own tooltip: the native one is unreadable in dark mode and never
+      {/* Journey's own tooltip: the native one is unreadable in dark mode and never
           appears on a touch device, and this control's whole job is to explain
           why there is no line. */}
       <Tooltip label={label} placement="left">

@@ -101,7 +101,7 @@ export function isVectorStyle(url: string | null | undefined): boolean {
  * Tiles drawn in GCJ-02 rather than WGS-84.
  *
  * Amap serves its raster tiles from `*.is.autonavi.com`, and they are shifted
- * from the WGS-84 coordinates everything else in TREK uses — by 100 to 800 m
+ * from the WGS-84 coordinates everything else in Journey uses — by 100 to 800 m
  * depending on where in China you are. A map on one of these has to project
  * through components/Map/gcj02Crs.ts or every marker lands on the wrong street.
  *

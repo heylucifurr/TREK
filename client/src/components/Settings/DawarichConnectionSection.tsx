@@ -136,7 +136,7 @@ export default function DawarichConnectionSection(): React.ReactElement {
 
 /**
  * Where the connection stands, in the place where it helps someone decide what
- * to do next: what the last sync did, and which parts of their instance TREK
+ * to do next: what the last sync did, and which parts of their instance Journey
  * could actually reach.
  *
  * Its own component because the phone twin renders the same three facts in a

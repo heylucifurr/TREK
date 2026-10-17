@@ -1,15 +1,15 @@
 /**
- * Client for the TREK Places API.
+ * Client for the Journey Places API.
  *
  * The index behind it is Overture Places, built monthly and served from a
- * server the project runs. It replaces the two things TREK used to do badly:
+ * server the project runs. It replaces the two things Journey used to do badly:
  * searching through Nominatim, which its own usage policy forbids for
  * autocomplete, and paying Google for a text search whose terms then forbid
  * storing what comes back.
  *
  * Everything here is read-only, unauthenticated and cacheable. There is no key
  * to configure and no quota to exhaust, so the failure modes are the network
- * and the service being down, both of which fall back to what TREK did before.
+ * and the service being down, both of which fall back to what Journey did before.
  */
 import { normalizePlaceWebsite } from '@trek/shared';
 import { readEnv, getAppUrl } from '../../app-config';
@@ -141,7 +141,7 @@ let breakerOpenUntil = 0;
 function countsAgainstReachability(err: unknown): boolean {
   const status = (err as { status?: number } | null)?.status;
   if (typeof status === 'number') return status >= 500 || status === 429;
-  return !(err instanceof Error && err.message === 'TREK Places API response too large');
+  return !(err instanceof Error && err.message === 'Journey Places API response too large');
 }
 
 /** Test seam: the breaker is process state, so a suite has to be able to clear it. */
@@ -165,7 +165,7 @@ async function getJson<T>(
   // every request passes, so a caller that did not is still stopped here. Ahead
   // of the breaker: a refusal says nothing about reachability.
   if (!readEnv().maps.trekPlacesEnabled) {
-    throw new Error('TREK Places API is switched off on this instance');
+    throw new Error('Journey Places API is switched off on this instance');
   }
 
   const url = new URL(trekPlacesBaseUrl() + path);
@@ -174,7 +174,7 @@ async function getJson<T>(
   }
 
   if (Date.now() < breakerOpenUntil) {
-    throw new Error('TREK Places API unreachable, not retrying yet');
+    throw new Error('Journey Places API unreachable, not retrying yet');
   }
 
   const controller = new AbortController();
@@ -188,7 +188,7 @@ async function getJson<T>(
       },
     });
     if (!res.ok) {
-      const err = new Error(`TREK Places API ${res.status}`) as Error & { status: number };
+      const err = new Error(`Journey Places API ${res.status}`) as Error & { status: number };
       err.status = res.status;
       throw err;
     }
@@ -230,7 +230,7 @@ async function readCapped(res: Response, max: number): Promise<string> {
     size += value.byteLength;
     if (size > max) {
       await reader.cancel();
-      throw new Error('TREK Places API response too large');
+      throw new Error('Journey Places API response too large');
     }
     chunks.push(value);
   }
@@ -404,7 +404,7 @@ export async function trekPlacesById(gers: string): Promise<TrekPlace | null> {
 }
 
 /**
- * Map a TREK place onto the record shape the client already reads.
+ * Map a Journey place onto the record shape the client already reads.
  *
  * Deliberately the same shape Nominatim and Google produce, so nothing on the
  * client had to learn a third format. `osm_id` carries the GERS id prefixed

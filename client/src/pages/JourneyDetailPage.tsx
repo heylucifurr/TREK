@@ -784,7 +784,7 @@ function JourneyDetailPageDesktop() {
         />
       )}
 
-      {/* TREK Studio. It portals itself over the page, so this journey keeps
+      {/* Journey Studio. It portals itself over the page, so this journey keeps
           rendering underneath and shows through the panel's margin. */}
       <Outlet />
     </div>

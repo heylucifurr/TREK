@@ -416,7 +416,7 @@ describe('client > endpoint wiring', () => {
 
   /**
    * The one call in this file that is deliberately TWO requests, which is why it is not
-   * in the list above: a search asks TREK's own indexes and any installed search-provider
+   * in the list above: a search asks Journey's own indexes and any installed search-provider
    * plugin at the same time, and the caller gets one list back (#2221).
    */
   it('FE-APISURF-055: mapsApi.search asks the core index and the plugin providers side by side', async () => {

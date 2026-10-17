@@ -150,7 +150,7 @@ export default function DawarichSuggestionsPanel({
           phone ? 'active:bg-[color:var(--m-inner)]' : 'hover:bg-surface-hover'
         }`}
       >
-        {/* Rounded, like every other avatar-sized mark in TREK: the logo is a
+        {/* Rounded, like every other avatar-sized mark in Journey: the logo is a
             square badge and a hard corner beside a rounded card reads as a
             pasted-in image. */}
         <span className="flex-shrink-0 overflow-hidden rounded-[6px]">
@@ -473,7 +473,7 @@ const ACTIONS = (phone: boolean): string =>
  * The label is a tooltip and the accessible name — spelling it out beside the
  * icon would cost the row the width its name needs.
  *
- * All of them look the same. Marking one as the primary action would be TREK
+ * All of them look the same. Marking one as the primary action would be Journey
  * deciding for the reader which of "put it on the map" and "write about it" they
  * meant, and the whole review step exists because that is theirs to decide.
  *

@@ -746,7 +746,7 @@ export function EntryEditor({ entry, journeyId, tripDates, galleryPhotos, trips,
                 <label className="text-[10px] font-semibold tracking-[0.12em] uppercase text-zinc-500 block mb-1.5">{t('mobileJourney.time')}</label>
                 {/* A native <input type="time"> paints 12h or 24h from the browser
                     locale, and no attribute overrides it — so it ignored the user's
-                    setting outright (#2067). The rest of TREK has used this picker
+                    setting outright (#2067). The rest of Journey has used this picker
                     for exactly that reason; the journey editor was never migrated. */}
                 <CustomTimePicker value={entryTime} onChange={setEntryTime} />
               </div>

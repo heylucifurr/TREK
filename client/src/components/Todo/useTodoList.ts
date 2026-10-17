@@ -64,7 +64,7 @@ export function useTodoList(tripId: number, items: TodoItem[], addItemSignal: nu
   const categories = useMemo(() => {
     const cats = new Set<string>()
     items.forEach(i => { if (i.category) cats.add(i.category) })
-    // Category names are free text the user types, and TREK ships 23 locales — a
+    // Category names are free text the user types, and Journey ships 23 locales — a
     // bare .sort() is byte order, which files every accented name behind the whole
     // ASCII range ("Übernachtung" after "Zelt").
     return Array.from(cats).sort((a, b) => a.localeCompare(b))

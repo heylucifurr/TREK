@@ -102,7 +102,7 @@ vi.mock('../../utils/webgl', () => ({ hasWebGL: () => true, resetWebGLProbe: () 
 // The real CRS is built from Leaflet's projection, which the mock above does not
 // carry. What matters here is only that the map is handed one for Amap tiles.
 vi.mock('../Map/gcj02Crs', () => ({
-  crsForBasemap: (gcj02: boolean) => (gcj02 ? { code: 'TREK:GCJ02' } : undefined),
+  crsForBasemap: (gcj02: boolean) => (gcj02 ? { code: 'Journey:GCJ02' } : undefined),
 }));
 
 const entriesWithCoords = [
@@ -457,7 +457,7 @@ describe('JourneyMap', () => {
     seedStore(useSettingsStore, { settings: buildSettings({ map_tile_url: AMAP_ROAD }) });
     render(<JourneyMap checkins={[]} entries={entriesWithCoords} />);
     expect(vi.mocked(L.tileLayer).mock.calls[0][0]).toBe(AMAP_ROAD);
-    expect(vi.mocked(L.map).mock.calls[0][1]).toMatchObject({ crs: { code: 'TREK:GCJ02' } });
+    expect(vi.mocked(L.map).mock.calls[0][1]).toMatchObject({ crs: { code: 'Journey:GCJ02' } });
   });
 
   it('FE-COMP-JOURNEYMAP-041: a basemap change restyles in place instead of rebuilding the map (#2097)', async () => {

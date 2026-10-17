@@ -4,7 +4,7 @@ import type { ActivePlugin } from '../../store/pluginStore'
 
 /**
  * Renders active `widget` plugins as dashboard cards (#plugins, M8). Each is a
- * sandboxed PluginFrame; the widget talks to TREK only over the bridge.
+ * sandboxed PluginFrame; the widget talks to Journey only over the bridge.
  *
  * The card mirrors the native dashboard tools (glassy `.tool` surface + uppercase
  * title) so plugins sit alongside them seamlessly, and the body auto-sizes to the

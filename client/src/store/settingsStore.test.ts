@@ -141,7 +141,7 @@ describe('offline language fallback', () => {
     expect(localStorage.getItem('app_language_server')).toBeNull()
   })
 
-  it('SETTINGS-LANG-006: a language TREK does not ship never reaches the mirror', async () => {
+  it('SETTINGS-LANG-006: a language Journey does not ship never reaches the mirror', async () => {
     localStorage.setItem('app_language_server', 'ja')
     vi.mocked(settingsApi.get).mockResolvedValue({ settings: { language: 'kl' } } as never)
 

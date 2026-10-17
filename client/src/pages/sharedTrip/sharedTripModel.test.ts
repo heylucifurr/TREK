@@ -60,9 +60,9 @@ describe('sharedTripLoadError (#2505)', () => {
     }
   })
 
-  it('does not take a 404 without the TREK error body for an expired link', () => {
+  it('does not take a 404 without the Journey error body for an expired link', () => {
     // Traefik with the container stopped or still starting, nginx, an empty
-    // answer: a 404 from something in front of TREK says nothing about the token.
+    // answer: a 404 from something in front of Journey says nothing about the token.
     expect(sharedTripLoadError(answered(404, '404 page not found\n'))).toBe('unavailable')
     expect(sharedTripLoadError(answered(404, '<html><body><h1>404 Not Found</h1></body></html>'))).toBe('unavailable')
     expect(sharedTripLoadError(answered(404, ''))).toBe('unavailable')

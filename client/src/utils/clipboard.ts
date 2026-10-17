@@ -2,7 +2,7 @@
  * Copying a link to the clipboard.
  *
  * `navigator.clipboard` is gated on a secure context, so on a plain-HTTP
- * self-host — which is how a good part of TREK is deployed — it is simply
+ * self-host — which is how a good part of Journey is deployed — it is simply
  * undefined and reading `.writeText` off it throws. Every copy button has to
  * carry the deprecated textarea + execCommand path as a fallback, so it lives
  * here once instead of in each of them.

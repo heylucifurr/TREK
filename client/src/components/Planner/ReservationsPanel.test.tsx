@@ -60,7 +60,7 @@ describe('ReservationsPanel', () => {
   it('FE-COMP-RES-004: shows empty-state mascot illustration', () => {
     render(<ReservationsPanel {...defaultProps} reservations={[]} />);
     // The mobile rewrite dropped the hint subtitle in favour of the shared
-    // EmptyState mascot; the bookings scene renders the TREK mark svg.
+    // EmptyState mascot; the bookings scene renders the Journey mark svg.
     expect(document.querySelector('.trek--bookings')).toBeInTheDocument();
   });
 

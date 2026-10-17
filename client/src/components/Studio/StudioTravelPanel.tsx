@@ -17,7 +17,7 @@ import { fetchRoads } from './roadRoute'
  *
  * This is the panel that makes Studio a *travel* book designer rather than a
  * layout tool that happens to be full of holiday photographs. The route, the
- * distance, the countries and the dates are already in TREK; the work is
+ * distance, the countries and the dates are already in Journey; the work is
  * offering them as objects rather than as numbers someone has to retype.
  *
  * ── Why every tile is a real preview ──────────────────────────────────────

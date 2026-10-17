@@ -5,7 +5,7 @@ import { calculateRouteWithLegs } from '../Map/RouteCalculator'
  *
  * ── Why this is fetched here and frozen, rather than stored ──────────────
  *
- * TREK already asks OSRM for road geometry every time the planner draws a
+ * Journey already asks OSRM for road geometry every time the planner draws a
  * driving day, and then throws it away: it lives in React state and a tab-local
  * cache, is never persisted, and no endpoint accepts it. Rather than build the
  * table, the write path, the read path and the migration that would keep it,

@@ -2,7 +2,7 @@ import { isTripTabId } from '../constants/tripTabs'
 import type { Settings } from '../types'
 
 /**
- * Where opening TREK lands. 'dashboard' is what TREK has always done; with
+ * Where opening Journey lands. 'dashboard' is what Journey has always done; with
  * 'active_trip' the app skips straight into the trip the dashboard would
  * feature, on the tab picked below — three clicks and three loads less for
  * someone entering expenses while they're actually travelling.

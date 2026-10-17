@@ -59,7 +59,7 @@ export function forgetServerLanguage(): void {
 // can't drift apart again.
 export const DEFAULT_SETTINGS: Settings = {
   map_tile_url: '',
-  // Empty = the public routing hosts TREK ships with.
+  // Empty = the public routing hosts Journey ships with.
   routing_base_url: '',
   // Empty = the public Valhalla, unless routing_base_url names an own router, in which
   // case no second engine is asked at all. See valhallaBase().

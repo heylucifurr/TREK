@@ -45,7 +45,7 @@ const nextcloud: DocSyncProvider = {
     { field_key: 'base_url', label: 'providerUrl', input_type: 'url', placeholder: 'https://cloud.example.com', hint: null, required: true, secret: false },
     { field_key: 'login_name', label: 'providerUsername', input_type: 'text', placeholder: 'username', hint: 'hintNextcloudLogin', required: true, secret: false },
     { field_key: 'app_password', label: 'providerAppPassword', input_type: 'password', placeholder: 'app password', hint: 'hintNextcloudAppPassword', required: true, secret: true },
-    { field_key: 'base_path', label: 'providerBasePath', input_type: 'text', placeholder: '/TREK', hint: 'hintBasePath', required: false, secret: false },
+    { field_key: 'base_path', label: 'providerBasePath', input_type: 'text', placeholder: '/Journey', hint: 'hintBasePath', required: false, secret: false },
     { field_key: 'allow_insecure_tls', label: 'allowInsecureTls', input_type: 'checkbox', placeholder: null, hint: null, required: false, secret: false },
   ],
 }
@@ -69,7 +69,7 @@ const connection = (overrides: Partial<DocSyncConnection> = {}): DocSyncConnecti
   id: 9,
   providerId: 'nextcloud',
   baseUrl: 'https://cloud.example.com',
-  settings: { login_name: 'maurice', base_path: '/Archive/TREK' },
+  settings: { login_name: 'maurice', base_path: '/Archive/Journey' },
   secrets: { app_password: 'stored' },
   allowInsecureTls: false,
   lastProbeState: 'ok',
@@ -153,7 +153,7 @@ describe('DocSyncConnectModal form', () => {
     expect(screen.getByPlaceholderText('app password')).toHaveAttribute('type', 'password')
     expect(screen.getByPlaceholderText('https://cloud.example.com')).toHaveAttribute('type', 'text')
     expect(screen.getByPlaceholderText('username')).toHaveAttribute('type', 'text')
-    expect(screen.getByPlaceholderText('/TREK')).toHaveAttribute('type', 'text')
+    expect(screen.getByPlaceholderText('/Journey')).toHaveAttribute('type', 'text')
   })
 
   it('FE-DOCSYNC-CONNECT-003: a secret the provider declares as plain text stays readable', async () => {
@@ -167,7 +167,7 @@ describe('DocSyncConnectModal form', () => {
     await open()
     const optional = tx('docsync.connect.optional')
 
-    const basePath = screen.getByPlaceholderText('/TREK').closest('label') as HTMLElement
+    const basePath = screen.getByPlaceholderText('/Journey').closest('label') as HTMLElement
     expect(within(basePath).getByText(optional)).toBeInTheDocument()
 
     for (const placeholder of ['https://cloud.example.com', 'username', 'app password']) {
@@ -266,7 +266,7 @@ describe('DocSyncConnectModal probe verdict', () => {
     await open()
 
     fillNextcloud()
-    fireEvent.change(screen.getByPlaceholderText('/TREK'), { target: { value: '/Archive' } })
+    fireEvent.change(screen.getByPlaceholderText('/Journey'), { target: { value: '/Archive' } })
     fireEvent.click(testButton())
 
     await waitFor(() => expect(testConnection).toHaveBeenCalledWith(TRIP_ID, {
@@ -317,7 +317,7 @@ describe('DocSyncConnectModal probe verdict', () => {
     expect(line.parentElement?.querySelector('svg')?.getAttribute('class')).not.toMatch(/shield/)
   })
 
-  it('FE-DOCSYNC-CONNECT-016: an address TREK itself blocked is marked with the shield, not the warning', async () => {
+  it('FE-DOCSYNC-CONNECT-016: an address Journey itself blocked is marked with the shield, not the warning', async () => {
     testConnection.mockResolvedValueOnce({ connected: false, error: 'ssrf_blocked' })
     await open()
 
@@ -431,12 +431,12 @@ describe('DocSyncConnectModal saving', () => {
 
 describe('DocSyncConnectModal with a connection already stored', () => {
   it('FE-DOCSYNC-CONNECT-024: the stored settings come back, the saved secret is only hinted at, and it saves untouched', async () => {
-    listConnections.mockResolvedValue([connection({ settings: { login_name: 'maurice', base_path: '/Archive/TREK', app_password: 'never-echo-me' } })])
+    listConnections.mockResolvedValue([connection({ settings: { login_name: 'maurice', base_path: '/Archive/Journey', app_password: 'never-echo-me' } })])
     const { onConnected } = await open(nextcloud, true)
 
     expect(await screen.findByPlaceholderText('••••••••')).toBeInTheDocument()
     expect(screen.getByPlaceholderText('username')).toHaveValue('maurice')
-    expect(screen.getByPlaceholderText('/TREK')).toHaveValue('/Archive/TREK')
+    expect(screen.getByPlaceholderText('/Journey')).toHaveValue('/Archive/Journey')
     // a secret is never echoed back into the box, whatever the settings blob holds
     expect(screen.getByPlaceholderText('••••••••')).toHaveValue('')
 

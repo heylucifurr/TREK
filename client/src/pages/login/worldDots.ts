@@ -1,4 +1,4 @@
-// Generated from server/assets/atlas/admin0.geojson.gz — TREK's own Atlas bundle.
+// Generated from server/assets/atlas/admin0.geojson.gz — Journey's own Atlas bundle.
 // The login screen is unauthenticated and cannot fetch Atlas, so the coastlines ship
 // as a 300x150 dot grid: sorted cell indices, delta-encoded in base36.
 // Regenerate with the script in the design notes if the bundle ever changes.

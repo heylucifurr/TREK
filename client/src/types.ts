@@ -1,4 +1,4 @@
-// Shared types for the TREK travel planner.
+// Shared types for the Journey travel planner.
 //
 // Domain entity/response types are now sourced from @trek/shared — the single
 // source of truth shared with the server. The Zod schemas there are built to
@@ -117,7 +117,7 @@ export interface Settings {
   routing_base_url?: string
   /**
    * Base URL of the Valhalla asked for the avoidance questions OSRM cannot answer.
-   * Undefined means the public FOSSGIS instance TREK ships with; empty means an
+   * Undefined means the public FOSSGIS instance Journey ships with; empty means an
    * operator turned the second engine off and "other ways" goes back to OSRM alone.
    */
   valhalla_base_url?: string
@@ -218,7 +218,7 @@ export interface Settings {
   dashboard_fx_from?: string
   dashboard_fx_to?: string
   dashboard_timezones?: string[]
-  /** Where opening TREK lands: the dashboard, or straight in the active trip. */
+  /** Where opening Journey lands: the dashboard, or straight in the active trip. */
   start_page?: 'dashboard' | 'active_trip'
   /** Which planner tab 'active_trip' opens on — a TripTabId (constants/tripTabs). */
   start_trip_tab?: string

@@ -13,7 +13,7 @@ import { addListener, removeListener } from '../../api/websocket'
 import { useIsPhone } from '../../mobile/useIsPhone'
 
 // The design-token contract handed to plugins (#4 richer context): non-secret CSS
-// values, resolved for the CURRENT theme, so a plugin can match TREK exactly (and
+// values, resolved for the CURRENT theme, so a plugin can match Journey exactly (and
 // re-match on a theme toggle / accent change) instead of hard-coding a mirror of
 // the palette that drifts. Names mirror index.css so a plugin can apply them
 // verbatim as CSS variables. This is the whole GLOBAL (:root/.dark) palette — the
@@ -237,7 +237,7 @@ const PLUGIN_SESSION_MAX_VALUE_BYTES = 1024
 
 /**
  * Returns all host-owned storage keys in one plugin scope (plugin-wide or a
- * specific trip), excluding TREK state and every other plugin/scope.
+ * specific trip), excluding Journey state and every other plugin/scope.
  */
 function getScopedSessionKeys(scopeKeyPrefix: string) {
   const keys: string[] = []
@@ -321,7 +321,7 @@ export default function PluginFrame({ pluginId, tripId = null, placeId = null, d
   const [height, setHeight] = useState<number | null>(null)
   // A host-rendered ConfirmDialog on the plugin's behalf: sandboxed frames have no
   // allow-modals and can't overlay the host, so destructive plugin actions get the
-  // same native confirm every TREK feature uses. One at a time; extras are refused.
+  // same native confirm every Journey feature uses. One at a time; extras are refused.
   // The ref mirrors the state so the message handler can gate + answer without
   // side effects inside a setState updater (StrictMode runs updaters twice).
   const [confirmReq, setConfirmReq] = useState<ConfirmRequest | null>(null)
@@ -359,7 +359,7 @@ export default function PluginFrame({ pluginId, tripId = null, placeId = null, d
     hostOrigin: window.location.origin,
     // #4 richer context — non-secret display data so plugins render natively:
     // who the user is (name/avatar/isAdmin — never email/role beyond a boolean),
-    // how TREK formats things, the resolved theme tokens, and the appearance state
+    // how Journey formats things, the resolved theme tokens, and the appearance state
     // (accent scheme, density, reduced-motion / no-transparency) so a plugin can
     // mirror the same look and accessibility choices as the host.
     user: userName != null ? { name: userName, avatar: userAvatar, isAdmin } : null,
@@ -677,7 +677,7 @@ export default function PluginFrame({ pluginId, tripId = null, placeId = null, d
   }
 
   // The dialog title always leads with the host-controlled plugin name, so a
-  // plugin cannot dress its confirm up as a TREK system dialog.
+  // plugin cannot dress its confirm up as a Journey system dialog.
   const pluginLabel = title || pluginId
   const confirmTitle = confirmReq?.title ? `${pluginLabel} — ${confirmReq.title}` : pluginLabel
 

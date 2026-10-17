@@ -61,7 +61,7 @@ describe('PackingListPanel', () => {
   it('FE-COMP-PACKING-003: empty state shows the packing mascot illustration', () => {
     const { container } = render(<PackingListPanel tripId={1} items={[]} />);
     // The reworded empty state drops the old hint copy in favour of the shared
-    // EmptyState: the TREK mascot acting out the "packing" scene beside the title.
+    // EmptyState: the Journey mascot acting out the "packing" scene beside the title.
     expect(container.querySelector('.trek--packing')).toBeInTheDocument();
   });
 

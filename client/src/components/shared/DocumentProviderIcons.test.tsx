@@ -1,7 +1,7 @@
 // FE-DOCSYNC-ICONS-001 to FE-DOCSYNC-ICONS-014
 
 /**
- * The document providers' marks, and TREK's own.
+ * The document providers' marks, and Journey's own.
  *
  * These are static files, so the only things worth holding still are the ones a
  * person would notice if they slipped: a provider the server seeds but the
@@ -118,7 +118,7 @@ describe('DOCUMENT_PROVIDER_ICONS', () => {
 })
 
 describe('TrekIcon', () => {
-  it('FE-DOCSYNC-ICONS-011: renders TREK\u2019s app icon in currentColor', () => {
+  it('FE-DOCSYNC-ICONS-011: renders Journey\u2019s app icon in currentColor', () => {
     const { container } = render(<TrekIcon />)
     const svg = container.querySelector('svg')
 
@@ -148,9 +148,9 @@ describe('TrekIcon', () => {
     const { container } = render(<TrekIcon />)
     expect(container.querySelector('svg')!.getAttribute('aria-hidden')).toBe('true')
 
-    const labelled = render(<TrekIcon aria-hidden={false} aria-label="TREK" />)
+    const labelled = render(<TrekIcon aria-hidden={false} aria-label="Journey" />)
     const svg = labelled.container.querySelector('svg')!
     expect(svg.getAttribute('aria-hidden')).toBe('false')
-    expect(svg.getAttribute('aria-label')).toBe('TREK')
+    expect(svg.getAttribute('aria-label')).toBe('Journey')
   })
 })

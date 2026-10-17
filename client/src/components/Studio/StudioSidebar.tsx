@@ -635,7 +635,7 @@ function ContentPanel({
                     {/* Two facts, two badges. Joined by a dot they read as one
                         string and the eye has to parse where the date ends. The
                         date follows the app's language, like every other date in
-                        TREK — see utils/formatters.ts. */}
+                        Journey — see utils/formatters.ts. */}
                     {e.date && <span className="st-badge">{formatDate(e.date, locale) ?? e.date}</span>}
                     {e.location && <span className="st-badge is-quiet">{e.location}</span>}
                   </div>

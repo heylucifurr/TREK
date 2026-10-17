@@ -5,7 +5,7 @@ import { gcj02ToWgs84, wgs84ToGcj02 } from '@trek/shared'
  * A Leaflet CRS that draws WGS-84 coordinates on GCJ-02 tiles.
  *
  * Amap's raster tiles are rendered in GCJ-02 — the datum Chinese law requires
- * published maps to use — while every coordinate in TREK is WGS-84: the database
+ * published maps to use — while every coordinate in Journey is WGS-84: the database
  * columns, the search results, the routes from OSRM, an imported GPX track. Put
  * one on the other untouched and every marker sits a few hundred metres from the
  * building it names, which around a city block is the wrong street.
@@ -46,7 +46,7 @@ function buildCrs(): L.CRS {
     },
     bounds: mercator.bounds,
   }
-  return L.Util.extend({}, L.CRS.EPSG3857, { code: 'TREK:GCJ02', projection }) as L.CRS
+  return L.Util.extend({}, L.CRS.EPSG3857, { code: 'Journey:GCJ02', projection }) as L.CRS
 }
 
 /**

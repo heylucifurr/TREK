@@ -27,7 +27,7 @@ export const SATELLITE_TILE_MAXZOOM = 19
  *
  * OpenFreeMap serves vector tiles only, so the app default needs a GL canvas, and
  * with WebGL off there is nothing to draw it on. Of the keyless raster sources
- * TREK already points at, this is the only street map: the ESRI layer above is
+ * Journey already points at, this is the only street map: the ESRI layer above is
  * imagery, and the CARTO templates below have carried an "API KEY REQUIRED"
  * watermark since 26.08.2026. It is preset one in the Map settings tab, so this
  * aims no new traffic at OSM's servers, and the volume is bounded by how few
@@ -68,7 +68,7 @@ const OSM_ATTRIBUTION = '&copy; <a href="https://www.openstreetmap.org/copyright
  * would have to pass digits instead, and over HTTP/2 the sharding buys nothing.
  *
  * IMPORTANT: these tiles are drawn in GCJ-02, not WGS-84. Everything else in
- * TREK — every marker, route and bounding box — is WGS-84, and dropping one
+ * Journey — every marker, route and bounding box — is WGS-84, and dropping one
  * datum on top of the other puts markers a few hundred metres off the street
  * they belong to. isGcj02Basemap() in utils/tileUrl.ts spots these URLs and the
  * map switches to the shifted CRS in components/Map/gcj02Crs.ts. Anything added

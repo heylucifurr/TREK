@@ -236,7 +236,7 @@ describe('RoadtripSidebar', () => {
 
   it('FE-ROADTRIP-SIDEBAR-009: a trip with nothing to drive shows the empty state, not a zeroed rail', () => {
     // Nothing to total up, so no "0 km" standing over an empty list. The mascot
-    // is the shape every other empty state in TREK uses.
+    // is the shape every other empty state in Journey uses.
     wrap(<RoadtripSidebar routes={routes({ days: [], totalDistance: 0, totalDuration: 0, totalStops: 0 })} />)
 
     expect(screen.getByText('No route yet')).toBeInTheDocument()
@@ -357,7 +357,7 @@ describe('RoadtripSidebar', () => {
   })
 
   it('FE-ROADTRIP-SIDEBAR-032: every stop offers a stay, whether it has one or not', () => {
-    // The value has never been editable anywhere in TREK, so a stop without one needs a
+    // The value has never been editable anywhere in Journey, so a stop without one needs a
     // way in before it can get one — the plus sits in the slot the number will occupy.
     const onEditStay = vi.fn()
     const stops = [
@@ -1039,7 +1039,7 @@ describe('RoadtripSidebar', () => {
    *
    * A property of the stop rather than of the traveller: the motorway rapid charger is
    * worth 80 % because the last fifth costs as long again, the one at the hotel is worth
-   * all of it. The badge is the only way into that figure anywhere in TREK.
+   * all of it. The badge is the only way into that figure anywhere in Journey.
    */
   describe('the fill badge on a stop that puts fuel back', () => {
     const refuelling = (fillPercent?: number | null): RoadtripDay => day({

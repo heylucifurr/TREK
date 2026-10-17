@@ -6,7 +6,7 @@ import { NextcloudIcon, OpenCloudIcon, PaperlessIcon, PapraIcon, SynologyDriveIc
 import TrekMark from '../shared/TrekMark';
 
 /*
- * The small pictures on the release cards: pieces of TREK itself, drawn at card
+ * The small pictures on the release cards: pieces of Journey itself, drawn at card
  * size rather than screenshotted, because a screenshot this small is a blur. They
  * carry no words, only place names and figures that read the same in every
  * language, so nothing here needs translating.
@@ -66,8 +66,8 @@ function DawarichVisual() {
   );
 }
 
-// A trip's documents travelling both ways between TREK and the five stores. The
-// wordmark without the API pill: this is TREK itself, not its index.
+// A trip's documents travelling both ways between Journey and the five stores. The
+// wordmark without the API pill: this is Journey itself, not its index.
 const STORES = [PaperlessIcon, PapraIcon, NextcloudIcon, OpenCloudIcon, SynologyDriveIcon];
 
 function DocSyncVisual() {

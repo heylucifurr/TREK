@@ -64,7 +64,7 @@ export default function DawarichBadge({
       {!iconOnly && <span className="truncate">{children}</span>}
     </span>
   )
-  // TREK's own tooltip rather than the browser's: the native one ignores the
+  // Journey's own tooltip rather than the browser's: the native one ignores the
   // colour scheme, waits a second and a half, and cannot be read on a touch
   // device at all. A badge with nothing to add gets none.
   return hint ? <Tooltip label={hint} placement="top">{badge}</Tooltip> : badge

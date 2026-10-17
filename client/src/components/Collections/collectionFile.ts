@@ -27,7 +27,7 @@ import {
 export const COLLECTION_FILE_EXTENSION = '.trekcollection.json'
 export const COLLECTION_GPX_EXTENSION = '.gpx'
 
-/** The two ways a list can leave: whole, for another TREK, or as waypoints for everything else. */
+/** The two ways a list can leave: whole, for another Journey, or as waypoints for everything else. */
 export type CollectionExportFormat = 'trek' | 'gpx'
 
 /** A file name from a list name: lowercase, ascii-ish, short. */
@@ -116,7 +116,7 @@ async function readGpx(text: string, fileName: string, reader: GpxReader): Promi
  *
  * The failures are kept apart because they are different things a person can
  * do something about: a file too big to be one of ours, a file that is not
- * readable at all, a JSON that is not a TREK list, an XML that is not a GPX,
+ * readable at all, a JSON that is not a Journey list, an XML that is not a GPX,
  * and a GPX with more places than a list may hold.
  */
 export async function readCollectionFile(file: File, readGpxFile: GpxReader): Promise<ParsedCollectionFile> {

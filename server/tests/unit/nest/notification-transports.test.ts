@@ -158,10 +158,10 @@ describe('buildWebhookBody', () => {
     expect(body.embeds[0].footer.text).toContain('Tokyo Adventure');
   });
 
-  it('Discord embed footer defaults to TREK when no trip name', () => {
+  it('Discord embed footer defaults to Journey when no trip name', () => {
     const noTrip = { ...payload, tripName: undefined };
     const body = JSON.parse(buildWebhookBody('https://discord.com/api/webhooks/123/abc', noTrip));
-    expect(body.embeds[0].footer.text).toBe('TREK');
+    expect(body.embeds[0].footer.text).toBe('Journey');
   });
 
   it('discordapp.com URL is also detected as Discord', () => {
@@ -218,19 +218,19 @@ describe('buildEmailHtml', () => {
 
   it('uses English i18n strings for lang=en', () => {
     const html = buildEmailHtml('Subject', 'Body', 'en');
-    expect(html).toContain('notifications enabled in TREK');
+    expect(html).toContain('notifications enabled in Journey');
   });
 
   it('uses German i18n strings for lang=de', () => {
     const html = buildEmailHtml('Subject', 'Body', 'de');
-    expect(html).toContain('TREK aktiviert');
+    expect(html).toContain('Journey aktiviert');
   });
 
   it('falls back to English i18n for unknown language', () => {
     const en = buildEmailHtml('Subject', 'Body', 'en');
     const unknown = buildEmailHtml('Subject', 'Body', 'xx');
     // Both should have the same footer text
-    expect(unknown).toContain('notifications enabled in TREK');
+    expect(unknown).toContain('notifications enabled in Journey');
   });
 
   it('points the header logo at an inline part by Content-ID, not at a data: URI (#2507)', () => {
@@ -238,7 +238,7 @@ describe('buildEmailHtml', () => {
     // Gmail strips data: URIs and Outlook blocks them, which left a broken image
     // in the header of every mail.
     expect(html).not.toContain('data:');
-    expect(html).toMatch(/<img src="cid:[^"]+" alt="TREK" width="48" height="48"/);
+    expect(html).toMatch(/<img src="cid:[^"]+" alt="Journey" width="48" height="48"/);
   });
 });
 

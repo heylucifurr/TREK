@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 /**
- * The TREK mascot — an empty-state character that IS the TREK mark: the logo is
+ * The Journey mascot — an empty-state character that IS the Journey mark: the logo is
  * the whole body, no arms, no legs. Two eyes give it life; a soft idle keeps it
  * breathing and blinking, and a ground shadow anchors it. Monochrome
  * (currentColor, theme-driven) and it holds a single pose under reduced motion.
@@ -80,7 +80,7 @@ export default function MDancingTrek({
         {/* scene prop behind / under the body — animates on its own */}
         <SceneBack scene={scene} />
 
-        {/* body = the TREK mark, with its own per-scene bounce (hop, nod, …) */}
+        {/* body = the Journey mark, with its own per-scene bounce (hop, nod, …) */}
         <g className={`trek-bounce trek-bounce--${scene}`}>
           <g className="trek-body">
             <g transform="translate(20.5 21.7) scale(0.0313)">

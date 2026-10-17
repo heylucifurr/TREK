@@ -22,7 +22,7 @@ export function TripRouteOverviewPill({ active, onToggle }: { active: boolean; o
       WebkitBackdropFilter: 'blur(20px) saturate(180%)',
       boxShadow: MAP_CONTROL_SHADOW,
     }}>
-      {/* TREK's own tooltip, not the browser's — the native one ignores the
+      {/* Journey's own tooltip, not the browser's — the native one ignores the
           colour scheme, waits a second and a half, and cannot be read on a touch
           device at all. `left`, because these controls hug the right edge of the
           map and a tooltip to the right would hang off it. */}

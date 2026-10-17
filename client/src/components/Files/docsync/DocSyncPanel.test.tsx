@@ -88,7 +88,7 @@ const link = (id: number, providerId: string, overrides: Partial<DocSyncLink> = 
   providerId,
   scopeKey: `scope-${id}`,
   remoteLabel: `Folder ${id}`,
-  remoteRootPath: `/TREK/folder-${id}`,
+  remoteRootPath: `/Journey/folder-${id}`,
   direction: 'both',
   deletePolicy: 'unlink',
   conflictPolicy: 'manual',

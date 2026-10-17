@@ -3,7 +3,7 @@ import { useTranslation } from '../../../i18n'
 import MDancingTrek, { type TrekScene } from '../../components/MDancingTrek'
 
 /**
- * Trip-open splash — the TREK mascot acts out a little journey while the trip
+ * Trip-open splash — the Journey mascot acts out a little journey while the trip
  * and its place photos load: packing the bags, hitting the road, cruising in
  * (paper plane) and dropping the destination pin. Each beat the mascot travels
  * in from the right (fade + slide) and pops in, the caption cross-fades and the
@@ -54,7 +54,7 @@ export default function MTripLoadingSplash({ title }: { title: string }) {
         </div>
       </div>
 
-      <div className="mb-2 text-[1.25rem] font-bold tracking-[-0.3px]">{title || 'TREK'}</div>
+      <div className="mb-2 text-[1.25rem] font-bold tracking-[-0.3px]">{title || 'Journey'}</div>
 
       <div className="mb-8 flex h-4 items-center justify-center">
         <span key={step.key} className="m-fade-in text-[0.75rem] font-medium uppercase tracking-[2px] text-m-faint">

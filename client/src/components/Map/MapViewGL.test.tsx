@@ -2308,9 +2308,9 @@ describe('MapViewGL', () => {
   //
   // Leaflet has had the imagery for a while and swaps its whole tile layer for it.
   // A GL map cannot do that, because its basemap is a style with dozens of layers,
-  // so the imagery goes on as a raster layer under everything TREK draws.
+  // so the imagery goes on as a raster layer under everything Journey draws.
 
-  it('FE-COMP-MAPVIEWGL-074: satellite adds the imagery under the first TREK layer', async () => {
+  it('FE-COMP-MAPVIEWGL-074: satellite adds the imagery under the first Journey layer', async () => {
     loadOnAttach()
     useSettingsStore.setState({
       settings: { ...useSettingsStore.getState().settings, map_base_layer: 'satellite' },

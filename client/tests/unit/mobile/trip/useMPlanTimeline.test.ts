@@ -629,7 +629,7 @@ describe('useMPlanTimeline', () => {
   })
 
   it('FE-MOB-PLTL-051: a day with a single stop still offers the hand-offs, which open that stop as a pin', async () => {
-    // No stay in TREK: one sight is the whole export. The #2476 gate only drops a day
+    // No stay in Journey: one sight is the whole export. The #2476 gate only drops a day
     // with nothing to hand over, not one that opens a pin to navigate to.
     const { result } = await renderTimeline(makePlanner({ assignments: { '2': [A_MUSEUM] } }))
     expect(result.current.canExportRoute).toBe(true)

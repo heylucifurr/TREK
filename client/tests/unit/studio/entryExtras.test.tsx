@@ -51,7 +51,7 @@ describe('the mood mark', () => {
 
   /*
    * The palette comes from MOOD_CONFIG rather than from the element's accent:
-   * a mood has a colour of its own in TREK, and a book that ignored it would
+   * a mood has a colour of its own in Journey, and a book that ignored it would
    * disagree with the page the entry was written on.
    */
   it('takes its colour from the mood, not from the element accent', () => {
@@ -60,7 +60,7 @@ describe('the mood mark', () => {
     expect(icon.getAttribute('stroke')).toBe('#B45309')
   })
 
-  it('draws nothing for a mood key TREK does not know', () => {
+  it('draws nothing for a mood key Journey does not know', () => {
     const { container } = draw([badge({ variant: 'mood', code: 'elated', text: 'Elated' })])
     expect(container.querySelector('svg')).toBeNull()
     // The words still print — an unknown key is not a reason to lose the label.

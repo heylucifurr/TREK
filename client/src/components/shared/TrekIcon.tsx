@@ -1,7 +1,7 @@
 import type { SVGProps } from 'react'
 
 /**
- * TREK's square app icon, from public/icons/icon.svg. The wordmark with the API
+ * Journey's square app icon, from public/icons/icon.svg. The wordmark with the API
  * pill is `TrekMark`.
  *
  * Inlined rather than loaded as an <img> so it takes `currentColor` and follows

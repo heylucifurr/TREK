@@ -403,7 +403,7 @@ describe('DisplaySettingsTab – startup destination', () => {
     const block = optionBlock(/^Start page$/);
 
     expect(within(block).getByText('Dashboard').closest('button')!.style.border).toContain('var(--text-primary)');
-    // Nothing to pick a tab for while TREK opens on the dashboard.
+    // Nothing to pick a tab for while Journey opens on the dashboard.
     expect(screen.queryByText('Start tab')).not.toBeInTheDocument();
   });
 

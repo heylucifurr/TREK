@@ -58,7 +58,7 @@ export default function MSettings() {
     ...(hasPlugins ? [{ id: 'plugins', label: t('settings.tabs.plugins'), icon: Puzzle }] : []),
     { id: 'offline', label: t('settings.tabs.offline'), icon: CloudOff },
     { id: 'account', label: t('settings.tabs.account'), icon: User },
-    // Same call as the desktop page: About is about the project — what TREK is,
+    // Same call as the desktop page: About is about the project — what Journey is,
     // where to file a bug, where to support it — and a customer of a hosted
     // instance is the audience for none of it. The version and the source link
     // move to the footer below, because AGPL §13 wants those offered wherever

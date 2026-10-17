@@ -256,7 +256,7 @@ export const useAuthStore = create<AuthState>()(
     // gets bounced into a trip it may not even be able to see.
     forgetStartDestination()
     // Likewise the language mirror: the login page only overrides it when the
-    // browser language is one TREK ships, so otherwise the next user here stays
+    // browser language is one Journey ships, so otherwise the next user here stays
     // in the previous account's language, launch after launch.
     forgetServerLanguage()
     // And work-offline, for the same reason with sharper teeth: the switch lives

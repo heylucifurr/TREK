@@ -17,7 +17,7 @@ import type { useDocSync } from './useDocSync'
 
 export interface ConflictItem {
   id: number
-  /** The trip file's name, or the provider's when TREK never got a copy. */
+  /** The trip file's name, or the provider's when Journey never got a copy. */
   name: string
   remoteName: string | null
 }

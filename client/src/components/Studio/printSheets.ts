@@ -5,9 +5,9 @@
  *
  * The alternative was a renderer on the server — headless Chromium, or a PDF
  * library drawing the pages a second time. Both were rejected for the same
- * reason: TREK is self-hosted, and neither Chromium in the image nor a parallel
+ * reason: Journey is self-hosted, and neither Chromium in the image nor a parallel
  * renderer to proofread against is a cost worth carrying when the browser
- * already produces exactly what the editor shows. It is also how TREK's other
+ * already produces exactly what the editor shows. It is also how Journey's other
  * exports work, so this is the house style rather than a new one.
  *
  * What comes out is a real PDF: vector text, embedded fonts, images at full

@@ -24,7 +24,7 @@ import { useTranslation } from '../../i18n'
  *
  * A photo book of a trip is not an album. The trip carries facts — how far, how
  * long, which countries, which way round — and those facts make pages that
- * photographs cannot. It is also the one thing TREK is in a position to do
+ * photographs cannot. It is also the one thing Journey is in a position to do
  * properly: the numbers are sitting in the trips already, and nobody has to
  * type them in.
  *
@@ -1139,7 +1139,7 @@ function MapView({ el, frameStyle, big = false }: {
 /**
  * The icon beside each figure.
  *
- * lucide, like every other icon in TREK — a hand-drawn set was the first pass
+ * lucide, like every other icon in Journey — a hand-drawn set was the first pass
  * and it was the wrong call twice over: it put a second drawing vocabulary next
  * to the one the whole app already uses, and it meant seven paths nobody would
  * ever revisit when lucide gained a better glyph.
@@ -1560,7 +1560,7 @@ function BadgeView({ el, frameStyle }: { el: BookBadgeElement; frameStyle: CSSPr
       {/*
         Mood and weather come from the journal entry, and they are drawn with
         the *same* icon and the same palette the journey page uses — imported
-        rather than re-listed, so a mood added to TREK appears here without
+        rather than re-listed, so a mood added to Journey appears here without
         anyone remembering to add it twice.
       */}
       {(el.variant === 'mood' || el.variant === 'weather') && el.code && showIcon && (() => {
@@ -1642,7 +1642,7 @@ function BadgeView({ el, frameStyle }: { el: BookBadgeElement; frameStyle: CSSPr
 /**
  * Two marked columns: what was good, and what was not.
  *
- * TREK's journal entries already keep these as two lists, and two lists is the
+ * Journey's journal entries already keep these as two lists, and two lists is the
  * thing a paragraph cannot hold. Run together the pairing is lost; run as one
  * column, which side each line belongs to is lost. Printed side by side with a
  * mark against each line, a reader takes it in without reading a word of it —

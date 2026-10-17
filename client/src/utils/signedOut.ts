@@ -4,7 +4,7 @@
  * On an OIDC-only install the login page bounces to the provider on its own
  * (`useLogin`), which is what makes signing out impossible: the provider still
  * has a live session, answers the silent authorize immediately, and the user is
- * back in TREK without having asked to be (#2123).
+ * back in Journey without having asked to be (#2123).
  *
  * The brake for that bounce used to be `noRedirect` in react-router location
  * state, and it does not survive the trip. `authStore.logout()` flips

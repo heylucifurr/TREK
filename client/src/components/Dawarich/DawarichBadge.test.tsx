@@ -23,7 +23,7 @@
  *  - **The type scales with the reader's setting.** Both sizes go through
  *    `--fs-scale-caption`; a raw `fontSize: 11` would look identical in review
  *    and ignore the text-size preference entirely.
- *  - **A badge with something to add gets TREK's tooltip, one without gets
+ *  - **A badge with something to add gets Journey's tooltip, one without gets
  *    none.** `title` wins over `label` as the hover text, so a pointer user can
  *    be told more than the accessible name says.
  */

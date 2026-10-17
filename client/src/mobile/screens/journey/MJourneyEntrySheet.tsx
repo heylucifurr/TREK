@@ -814,7 +814,7 @@ export default function MJourneyEntrySheet({
         <div className="mt-3 grid grid-cols-[minmax(0,1fr)_104px] gap-2">
           <div className="min-w-0">
             <div className={`${eyebrow} mb-[5px]`}>{t('journey.editor.date')}</div>
-            {/* TREK's own picker, like the time field beside it: a native
+            {/* Journey's own picker, like the time field beside it: a native
                 `<input type="date">` paints itself from the OS locale and takes
                 no theme, so the two sat in one row looking like two apps. */}
             <CustomDatePicker value={entryDate} onChange={setEntryDate} disabled={readOnly} />

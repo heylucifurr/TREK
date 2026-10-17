@@ -193,7 +193,7 @@ const DAY_BADGE = 'inline-flex h-[20px] items-center rounded-lg px-2 font-geist 
  * How long the traveller stays here, and the way to change it.
  *
  * On every stop, not only the ones that already carry a time: the value has never been
- * editable anywhere in TREK, so a stop that has none needs somewhere to say so before it
+ * editable anywhere in Journey, so a stop that has none needs somewhere to say so before it
  * can get one. Unset it reads as a plus in the slot the number will occupy, which keeps
  * the two states the same shape and the same width — a row does not jump when a stay is
  * added to it.
@@ -2220,7 +2220,7 @@ export default function RoadtripSidebar({
       <div className="flex min-h-0 flex-1 items-center justify-center overflow-y-auto">
         {/* The mascot rather than a pin and two lines of instructions. The rail
             is empty because the trip has no days with places yet, which is a
-            state, not a task list: the same look every other empty state in TREK
+            state, not a task list: the same look every other empty state in Journey
             has. */}
         <EmptyState
           scene="transport"

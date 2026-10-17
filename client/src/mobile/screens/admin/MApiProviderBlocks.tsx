@@ -7,10 +7,10 @@ import { useTranslation } from '../../../i18n'
  * The API-keys card's two building blocks, in the phone's own material.
  *
  * The desktop tab was rebuilt around one idea: a key should be the exception
- * rather than the thing you are expected to paste. The TREK Places API leads,
+ * rather than the thing you are expected to paste. The Journey Places API leads,
  * the paid providers follow as comparable blocks, and the "recommended" mark
  * belongs to the free option instead of to the Google field. The phone still
- * had the older shape, where Google wore the recommendation and TREK was not on
+ * had the older shape, where Google wore the recommendation and Journey was not on
  * the screen at all, which is the opposite advice on the same setting.
  *
  * Rebuilt rather than shared with the desktop component: every surface, radius
@@ -60,7 +60,7 @@ function ChipGroup({
   )
 }
 
-/** The TREK Places API, above the paid keys because it is the alternative to them. */
+/** The Journey Places API, above the paid keys because it is the alternative to them. */
 export function MTrekApiBlock() {
   const { t } = useTranslation()
   const [open, setOpen] = useState(false)
@@ -72,7 +72,7 @@ export function MTrekApiBlock() {
     { Icon: ShieldOff, text: t('admin.trekApi.factPrivacy') },
   ]
 
-  // The same fields the desktop card lists, reusing words TREK already has.
+  // The same fields the desktop card lists, reusing words Journey already has.
   const fields = [
     t('places.formName'),
     t('collections.coordinates'),
@@ -96,7 +96,7 @@ export function MTrekApiBlock() {
 
       <div className="overflow-hidden rounded-[16px] border border-[color:var(--m-act)] bg-[color:var(--m-ic)]">
         <div className="px-[14px] pt-[18px] pb-[13px]">
-          <TrekMark className="h-6 w-auto text-m-ink" aria-label="TREK Places API" />
+          <TrekMark className="h-6 w-auto text-m-ink" aria-label="Journey Places API" />
           <p className="mt-[9px] text-[0.8125rem] leading-relaxed text-m-muted">{t('admin.trekApi.tagline')}</p>
           <ul className="mt-3 grid grid-cols-1 gap-[7px]">
             {facts.map(({ Icon, text }) => (
@@ -185,7 +185,7 @@ export function MBlockDisclosure({ label, children }: { label: string; children:
 }
 
 /**
- * One paid provider, in the same shape as the TREK block above it, so the card
+ * One paid provider, in the same shape as the Journey block above it, so the card
  * reads as a list of comparable options rather than one highlighted thing with
  * loose fields underneath.
  */

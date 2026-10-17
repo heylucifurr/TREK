@@ -383,7 +383,7 @@ export default function DawarichAtlasDialog({
       size="xl"
       title={
         <span className="flex items-center gap-2.5">
-          {/* Rounded, like every other avatar-sized mark in TREK: the logo is a
+          {/* Rounded, like every other avatar-sized mark in Journey: the logo is a
               square badge and a hard corner beside a rounded dialog reads as a
               pasted-in image. */}
           <span className="flex-shrink-0 overflow-hidden rounded-lg">

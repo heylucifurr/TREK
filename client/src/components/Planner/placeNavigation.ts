@@ -46,7 +46,7 @@ export function showsAppleMaps(): boolean {
  * is what makes the destination legible: the coordinates anchor which place is
  * meant, the name is what the driver sees on the screen instead of a number.
  * Without the position a name alone would be a gamble — there are a lot of
- * places called "Bahnhof" — so a place TREK has no coordinates for reaches
+ * places called "Bahnhof" — so a place Journey has no coordinates for reaches
  * neither app.
  *
  * Google is the exception and keeps the link it always had, because it can do
@@ -114,7 +114,7 @@ export function getNavigationTargets(
  * In a browser tab this opens a tab, which is what a link should do. In an
  * installed app it must not: the maps application takes over from the new
  * context before it paints, so what the user comes back to is an empty window
- * they have to dismiss before TREK is usable again (#2218). Navigating the
+ * they have to dismiss before Journey is usable again (#2218). Navigating the
  * current context instead means the handover happens from the page the user is
  * already on, and returning lands them back where they were, because the app
  * shell was never replaced by the time the platform switched away.

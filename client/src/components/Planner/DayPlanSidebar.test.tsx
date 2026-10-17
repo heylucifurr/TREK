@@ -4850,7 +4850,7 @@ describe('the day route-tools row', () => {
     render(<DayPlanSidebar {...makeDefaultProps(dayWithTwoStops())} />)
     const btn = screen.getByRole('button', { name: /optimize/i })
     // The assertion that pins the change: named, but no visible label. The name
-    // is `aria-label` rather than `title` — the hover text is TREK's own tooltip
+    // is `aria-label` rather than `title` — the hover text is Journey's own tooltip
     // now, and a browser tooltip is not an accessible name anyway.
     expect(btn).toBeInTheDocument()
     expect(btn.textContent?.trim()).toBe('')

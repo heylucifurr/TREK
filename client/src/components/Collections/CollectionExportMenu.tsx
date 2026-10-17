@@ -25,7 +25,7 @@ const MENU_WIDTH = 300
 /**
  * Export in the list hero: a menu of the two formats a list can leave in (#2301).
  *
- * The TREK file carries everything and is for another TREK; GPX carries the
+ * The Journey file carries everything and is for another Journey; GPX carries the
  * places as waypoints and is for every other map app. Choosing is the whole
  * interaction, so it is a menu rather than a dialog.
  *

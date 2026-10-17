@@ -148,7 +148,7 @@ export function ErrorFallback({ error, reset, isChunkError, level, variant, labe
         <p className={`text-body ${mobile ? 'text-m-muted' : 'text-content-secondary'}`}>{body}</p>
       </div>
 
-      {/* Worth showing: TREK is self-hosted, so the person seeing this is often the
+      {/* Worth showing: Journey is self-hosted, so the person seeing this is often the
           same person who will paste it into an issue. */}
       {message && (
         <code className={`max-w-full truncate text-caption ${mobile ? 'text-m-faint' : 'text-content-faint'}`}>
@@ -201,11 +201,11 @@ export function RootErrorFallback({ error, isChunkError }: FallbackState) {
     >
       <AlertTriangle size={24} className="text-content-muted" aria-hidden />
       <p className="text-subtitle font-semibold text-content">
-        {isChunkError ? 'A new version is available' : 'TREK could not start'}
+        {isChunkError ? 'A new version is available' : 'Journey could not start'}
       </p>
       <p className="text-body text-content-secondary">
         {isChunkError
-          ? 'TREK was updated while this tab was open. Reload to get the new version.'
+          ? 'Journey was updated while this tab was open. Reload to get the new version.'
           : 'Reloading usually fixes this. Your data is safe.'}
       </p>
       {message && <code className="max-w-full truncate text-caption text-content-faint">{message}</code>}

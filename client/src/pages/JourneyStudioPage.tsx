@@ -1,7 +1,7 @@
 import StudioShell from '../components/Studio/StudioShell'
 
 /**
- * TREK Studio, the Journey book designer.
+ * Journey Studio, the Journey book designer.
  *
  * A child route of /journey/:id rather than a page of its own: the journey stays
  * mounted and shows through behind the panel, so Studio reads as something you

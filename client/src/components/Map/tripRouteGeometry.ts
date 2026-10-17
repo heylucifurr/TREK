@@ -151,7 +151,7 @@ export function summariseTripRoute(days: TripOverviewDay[]): TripRouteSummary {
 }
 
 /**
- * Gap between two routing requests. The public OSRM hosts TREK ships with state one
+ * Gap between two routing requests. The public OSRM hosts Journey ships with state one
  * request per second; the overview asks for every leg of every day, so without spacing
  * the first handful answer and the rest come back 429 (the road trip rail learnt this
  * first and paces itself the same way).

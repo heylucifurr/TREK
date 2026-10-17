@@ -57,7 +57,7 @@ export function linkHost(url: string): string {
  * failed, not the link, so the page offers a retry instead of sending the
  * viewer back to the owner for a new link that would not have been needed.
  *
- * A 404 without that body is not TREK talking: a reverse proxy with no
+ * A 404 without that body is not Journey talking: a reverse proxy with no
  * upstream answers one on its own (Traefik while the container is stopped or
  * still starting, nginx with a missing location), so it counts as a failed
  * load too.

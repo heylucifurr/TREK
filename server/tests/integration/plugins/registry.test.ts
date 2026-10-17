@@ -946,7 +946,7 @@ describe('TREK-version gating on install', () => {
 
     it('does NOT lift the plugin-API version gate — that one is a real ABI break', () => {
       const bytes = makeArtifact({ id: 'my-upload', name: 'Up', version: '1.0.0', type: 'integration', apiVersion: 2 });
-      expect(() => svc.stageUpload(bytes)).toThrow('plugin requires plugin-API v2; this TREK supports v1');
+      expect(() => svc.stageUpload(bytes)).toThrow('plugin requires plugin-API v2; this Journey supports v1');
     });
   });
 
@@ -1031,7 +1031,7 @@ describe('TREK-version gating on install', () => {
       // trek range is satisfiable on its own — parseManifest's apiVersion check must
       // fire (and stop the upload) before assertHostCompatible is ever reached.
       const bytes = makeArtifact({ id: 'my-upload', name: 'Up', version: '1.0.0', type: 'integration', apiVersion: 2 });
-      expect(() => svc.stageUpload(bytes)).toThrow('plugin requires plugin-API v2; this TREK supports v1');
+      expect(() => svc.stageUpload(bytes)).toThrow('plugin requires plugin-API v2; this Journey supports v1');
       expect(fs.existsSync(path.join(codeRoot, 'my-upload'))).toBe(false);
     });
   });

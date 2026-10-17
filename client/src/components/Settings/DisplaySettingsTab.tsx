@@ -42,7 +42,7 @@ export default function DisplaySettingsTab(): React.ReactElement {
   return (
     <>
       <Section title={t('settings.general.startup')} icon={Rocket}>
-      {/* Where opening TREK lands */}
+      {/* Where opening Journey lands */}
       <div>
         <label className="block text-sm font-medium mb-2 text-content-secondary">{t('settings.startPage')}</label>
         <div className="flex gap-3">

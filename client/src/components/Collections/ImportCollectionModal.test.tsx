@@ -110,7 +110,7 @@ describe('ImportCollectionModal (#2198)', () => {
     await waitFor(() => expect(screen.getByText('That file could not be read.')).toBeInTheDocument());
 
     await choose(JSON.stringify({ format: 'something.else' }));
-    await waitFor(() => expect(screen.getByText('That is not a TREK list file.')).toBeInTheDocument());
+    await waitFor(() => expect(screen.getByText('That is not a Journey list file.')).toBeInTheDocument());
   });
 
   it('FE-COMP-COLLIMPORT-008: takes a good file after a bad one, and forgets the complaint', async () => {
@@ -170,7 +170,7 @@ describe('ImportCollectionModal with a GPX (#2301)', () => {
     expect(screen.getByText('2 places')).toBeInTheDocument();
     expect(screen.getByText('2 waypoints without usable coordinates are left out.')).toBeInTheDocument();
     expect(screen.getByText('This file also has 8 track points. Tracks are not imported, only waypoints.')).toBeInTheDocument();
-    // The note about ratings and members is about TREK files; a GPX never had any.
+    // The note about ratings and members is about Journey files; a GPX never had any.
     expect(screen.queryByText(/Ratings, members/)).toBeNull();
 
     await userEvent.click(importButton());

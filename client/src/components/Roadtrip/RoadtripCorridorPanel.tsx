@@ -666,7 +666,7 @@ export default function RoadtripCorridorPanel({
 
         <div className="min-h-0 flex-1 overflow-y-auto px-2.5 pb-3">
           {grouped.length === 0 ? (
-            // The same empty state the rest of TREK uses, with the mascot acting out the
+            // The same empty state the rest of Journey uses, with the mascot acting out the
             // scene. `search` while it is running, `idle` before anyone has asked, and a
             // confused look when a filter left nothing standing — the picture says which
             // of the three it is before the sentence is read.

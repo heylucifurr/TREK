@@ -139,7 +139,7 @@ function headingId(children: ReactNode): string {
     .replace(/\s+/g, '-')
 }
 
-/** Markdown renderer with TREK-styled elements and SPA-internal links. */
+/** Markdown renderer with Journey-styled elements and SPA-internal links. */
 function WikiContent({ markdown }: { markdown: string }) {
   return (
     <Markdown

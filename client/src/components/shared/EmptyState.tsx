@@ -2,7 +2,7 @@ import type { CSSProperties, ReactNode } from 'react'
 import MDancingTrek, { type TrekScene, type TrekMood } from '../../mobile/components/MDancingTrek'
 
 /**
- * The one desktop empty state: the TREK mascot acting out the page's scene with
+ * The one desktop empty state: the Journey mascot acting out the page's scene with
  * a single title beneath it — no subtitle, one uniform look everywhere.
  *
  * The mascot is monochrome and drives its colours off two mobile tokens

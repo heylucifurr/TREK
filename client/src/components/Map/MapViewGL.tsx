@@ -67,7 +67,7 @@ const GPX_HIT_LAYER_ID = 'trip-gpx-hit'
  *
  * Leaflet swaps its whole tile layer for the imagery; a GL map cannot, because the
  * basemap is a style with dozens of layers in it. So the imagery goes on as a raster
- * layer of its own, drawn over the style and under everything TREK adds — the route,
+ * layer of its own, drawn over the style and under everything Journey adds — the route,
  * the pins and the tracks stay on top and stay legible, which is the same order the
  * Leaflet map ends up with.
  *
@@ -75,8 +75,8 @@ const GPX_HIT_LAYER_ID = 'trip-gpx-hit'
  */
 const SATELLITE_SOURCE_ID = 'trip-satellite'
 const SATELLITE_LAYER_ID = 'trip-satellite-raster'
-/** Everything TREK draws is prefixed; the imagery is inserted before the first of them. */
-// Everything TREK draws on a GL map, so the satellite raster can be slipped underneath all
+/** Everything Journey draws is prefixed; the imagery is inserted before the first of them. */
+// Everything Journey draws on a GL map, so the satellite raster can be slipped underneath all
 // of it. `route-alt-` earns its place here: the roads offered for a leg are added before the
 // route source so they sit under the current route, which also puts them before the first
 // `trip-` layer, and anchoring the imagery there painted right over them.
@@ -340,7 +340,7 @@ function applySatellite(map: any, on: boolean): void {
         attribution: SATELLITE_TILE_ATTRIBUTION,
       })
     }
-    // Under the first thing TREK draws, over everything the basemap style draws.
+    // Under the first thing Journey draws, over everything the basemap style draws.
     // Without the anchor the imagery lands on top and buries the route.
     const layers = map.getStyle?.()?.layers ?? []
     const firstOwn = layers.find((l: { id: string }) =>
@@ -1030,7 +1030,7 @@ export function MapViewGL({
         `color:${ALT_LABEL_TEXT}`,
         'border:none;border-radius:11px',
         // A <button> does not inherit the page's font, so without this the label reads in
-        // the browser's UI face while every other piece of TREK chrome reads in Poppins.
+        // the browser's UI face while every other piece of Journey chrome reads in Poppins.
         'font-family:var(--font-system)',
         'padding:6px 11px;font-size:13px;font-weight:600;line-height:1.25',
         'box-shadow:0 2px 10px rgba(0,0,0,.35)',

@@ -152,7 +152,7 @@ const PLACE_BODY: DawarichAccept = { target: 'place', tripId: 7, dayId: 3 }
 // read back from the bundle so a reader of this file sees the sentence that ends
 // up on screen, and so a reworded string is a decision somebody makes here too.
 const EN = {
-  offline: 'This needs a connection — TREK is offline right now.',
+  offline: 'This needs a connection — Journey is offline right now.',
   unauthorized: 'Dawarich rejected the API key.',
   unknown: 'Something went wrong talking to Dawarich.',
   acceptError: 'Could not add this',
@@ -208,7 +208,7 @@ describe('useDawarichSuggestions', () => {
   })
 
   it('FE-DAWARICH-SUGG-003: a list from an instance nobody is connected to still shows its rows', async () => {
-    // The suggestions survive a disconnect: they are TREK's own rows by then,
+    // The suggestions survive a disconnect: they are Journey's own rows by then,
     // and hiding them would lose a backlog somebody still has to work through.
     repo.suggestions.mockResolvedValue(list({ connected: false, lastSyncState: 'never', lastSyncAt: null }))
 

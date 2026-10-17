@@ -15,7 +15,7 @@ import type { RoadtripStopType } from '@trek/shared'
  * it was to leave road trip mode, add the place under Days, drag it onto the right day,
  * come back and mark it a charging stop.
  *
- * So the form the rest of TREK adds places with does the job, with three changes: the
+ * So the form the rest of Journey adds places with does the job, with three changes: the
  * category becomes the kind of stop (a pump is not a taste, it is a fact about the
  * place), the costs go (a petrol stop is not an activity with a budget line), and this
  * row asks where on the drive it belongs. Everything else about the form is the reason

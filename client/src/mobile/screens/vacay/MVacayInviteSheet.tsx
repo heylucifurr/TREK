@@ -14,7 +14,7 @@ interface MVacayInviteSheetProps {
 }
 
 /**
- * Fusion "Invite user" sheet: pick another TREK user and send the invite.
+ * Fusion "Invite user" sheet: pick another Journey user and send the invite.
  * Pending invites are listed underneath and can be withdrawn (the desktop
  * persons panel's cancel action).
  */

@@ -96,7 +96,7 @@ export interface BlobCacheEntry {
 }
 
 /**
- * A place from the TREK Places index, cached for the area of one trip.
+ * A place from the Journey Places index, cached for the area of one trip.
  *
  * NOT a trip place — those are in `places` and belong to the user. These are
  * candidates: the shops, restaurants and stations that happen to be near where
@@ -220,7 +220,7 @@ class TrekOfflineDb extends Dexie {
       importFiles: '[jobId+fileName], jobId, createdAt',
     });
 
-    // v5: places from the TREK Places index for the trip's area, so search
+    // v5: places from the Journey Places index for the trip's area, so search
     // answers offline. `searchName` is indexed because that is what an offline
     // query filters on; `tripId` so the set drops with its trip.
     this.version(6).stores({ roadtripPreferences: 'tripId' });

@@ -434,7 +434,7 @@ export class PaperlessDocumentProvider implements DocumentProvider {
         tooLarge: (declared) =>
           new PaperlessError(
             'too_large',
-            'The document is larger than TREK will transfer',
+            'The document is larger than Journey will transfer',
             undefined,
             `content_length=${declared}`,
           ),
@@ -669,7 +669,7 @@ export class PaperlessDocumentProvider implements DocumentProvider {
 
     try {
       const workflowId = await this.client.createWorkflow(creds, {
-        name: `TREK document sync (link ${scope.linkId})`,
+        name: `Journey document sync (link ${scope.linkId})`,
         tagId,
         callbackUrl,
         secretHeader: { name: PAPERLESS_WEBHOOK_SECRET_HEADER, value: secret },

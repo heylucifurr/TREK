@@ -11,7 +11,7 @@ import { isEffectivelyOffline } from '../sync/networkMode'
  * Reads from the Dawarich integration.
  *
  * **Deliberately online-only, and no Dexie table.** Everything here is a live
- * read of somebody's location history on a server TREK does not own: a cached
+ * read of somebody's location history on a server Journey does not own: a cached
  * recording is a stale one, and a cached copy of a GPS archive is the thing
  * this integration exists not to keep. The precedent in this directory is
  * `roadtripHazardsRepo` / `chargingRepo` / `schoolHolidayCatalogRepo` — same

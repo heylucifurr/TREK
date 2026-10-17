@@ -4,7 +4,7 @@ import { render, screen, fireEvent, waitFor } from '../../../tests/helpers/rende
 import type { ChatReaction } from './CollabChat.types'
 import type { NoteAuthor } from './CollabNotes.types'
 
-const linkPreview = vi.fn(async (_tripId: number, _url: string) => ({ title: 'TREK', image: null as string | null }))
+const linkPreview = vi.fn(async (_tripId: number, _url: string) => ({ title: 'Journey', image: null as string | null }))
 vi.mock('../../api/client', () => ({ collabApi: { linkPreview: (tripId: number, url: string) => linkPreview(tripId, url) } }))
 
 import { TwemojiImg } from './CollabChatTwemojiImg'
@@ -19,7 +19,7 @@ function reaction(overrides: Partial<ChatReaction> = {}): ChatReaction {
 
 beforeEach(() => {
   linkPreview.mockReset()
-  linkPreview.mockResolvedValue({ title: 'TREK', image: null })
+  linkPreview.mockResolvedValue({ title: 'Journey', image: null })
 })
 
 describe('TwemojiImg', () => {
@@ -132,7 +132,7 @@ describe('WebsiteThumbnail', () => {
     render(<WebsiteThumbnail url="https://www.liketrek.com/docs" tripId={4} color="#000" />)
 
     expect(screen.getByText('liketrek.com')).toBeInTheDocument()
-    await waitFor(() => expect(screen.getByRole('link')).toHaveAttribute('title', 'TREK'))
+    await waitFor(() => expect(screen.getByRole('link')).toHaveAttribute('title', 'Journey'))
     expect(linkPreview).toHaveBeenCalledWith(4, 'https://www.liketrek.com/docs')
   })
 

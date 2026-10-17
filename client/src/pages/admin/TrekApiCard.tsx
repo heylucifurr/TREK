@@ -8,7 +8,7 @@ interface TrekApiCardProps {
 }
 
 /**
- * The TREK Places API, above the Google key because it is the alternative to it.
+ * The Journey Places API, above the Google key because it is the alternative to it.
  *
  * Given real weight on the page on purpose: it is what makes a key optional
  * instead of expected. The weight comes from the mark, one line of type and a
@@ -27,7 +27,7 @@ interface TrekApiCardProps {
 const SOURCES = ['Overture Maps Foundation', 'OpenStreetMap', 'Wikivoyage', 'Wikimedia']
 
 export default function TrekApiCard({ t }: TrekApiCardProps): React.ReactElement {
-  // Reuses the words TREK already has for these fields wherever it has them,
+  // Reuses the words Journey already has for these fields wherever it has them,
   // so the chip row costs two new strings instead of ten.
   const fields = [
     t('places.formName'),
@@ -70,7 +70,7 @@ export default function TrekApiCard({ t }: TrekApiCardProps): React.ReactElement
       <div className="overflow-hidden rounded-xl border border-accent/40 bg-surface-secondary/50 shadow-sm">
       <div className="px-5 pt-6 pb-4">
         <div className="flex items-start justify-between gap-4">
-          <TrekMark className="h-8 w-auto text-content" aria-label="TREK Places API" />
+          <TrekMark className="h-8 w-auto text-content" aria-label="Journey Places API" />
         </div>
 
         <p className="mt-3 text-sm leading-relaxed text-content-secondary">

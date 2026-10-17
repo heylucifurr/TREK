@@ -93,7 +93,7 @@ export interface AutoInput {
   /**
    * The real geometry of the route, when the journey has any.
    *
-   * GPX and KML imports are the only thing in TREK that stores an actual path
+   * GPX and KML imports are the only thing in Journey that stores an actual path
    * — every other route is a straight line between stops. The editor already
    * fetches it for the Travel panel; an auto-laid-out book used to hard-code an
    * empty array here and throw it away, which is why the one journey with a

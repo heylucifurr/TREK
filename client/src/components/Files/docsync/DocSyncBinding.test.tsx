@@ -20,7 +20,7 @@ function makeLink(overrides: Partial<DocSyncLink> = {}): DocSyncLink {
     providerId: 'paperless',
     scopeKey: 'trek-trip-3',
     remoteLabel: 'Lisbon papers',
-    remoteRootPath: '/TREK/Lisbon',
+    remoteRootPath: '/Journey/Lisbon',
     direction: 'both',
     deletePolicy: 'unlink',
     conflictPolicy: 'manual',
@@ -85,7 +85,7 @@ const openSettings = () => fireEvent.click(screen.getByRole('button', { name: 'S
 
 const rowFor = (label: string) => screen.getByText(label).closest('div') as HTMLElement
 
-const UNLINK_QUESTION = 'Documents stay in TREK and at the store. Only the pairing between them goes.'
+const UNLINK_QUESTION = 'Documents stay in Journey and at the store. Only the pairing between them goes.'
 
 /** The confirmation the disconnect button opens; it renders in a portal. */
 const unlinkDialog = () => within(screen.getByText(UNLINK_QUESTION).closest('.trek-modal-enter') as HTMLElement)
@@ -260,7 +260,7 @@ describe('DocSyncBinding: what it says about itself', () => {
 
   it('FE-DOCSYNC-BIND-012: the folder falls back to the path, then to the scope key', () => {
     const { unmount } = renderCard({ link: { remoteLabel: '' } })
-    expect(screen.getByText('/TREK/Lisbon')).toBeInTheDocument()
+    expect(screen.getByText('/Journey/Lisbon')).toBeInTheDocument()
     unmount()
 
     renderCard({ link: { remoteLabel: '', remoteRootPath: null } })

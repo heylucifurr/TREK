@@ -30,7 +30,7 @@ export function bypassChip(b: TrekRangeBypass | null | undefined, t: T) {
  * The Install button for a registry entry the server flagged incompatible, once the
  * operator set TREK_PLUGINS_IGNORE_TREK_RANGE: the server will take the newest version
  * regardless, so the button says exactly that — and carries what the warning has to say
- * first. `title` is the shell's existing "why" line (needs TREK X — this server runs Y).
+ * first. `title` is the shell's existing "why" line (needs Journey X — this server runs Y).
  */
 export function bypassOffer(item: { name: string; trek?: string | null; hostVersion?: string }, t: T, title: string) {
   return {
@@ -45,7 +45,7 @@ export function bypassOffer(item: { name: string; trek?: string | null; hostVers
  * Title + body of the warning, for either mode: a CONFIRM step before a registry install
  * the server would otherwise refuse (`onConfirm` set), or a plain NOTICE after a path that
  * could not ask first — sideload, dev-link, update, dependency download. The copy is the
- * whole point: the admin is accepting that the author never vouched for this TREK and
+ * whole point: the admin is accepting that the author never vouched for this Journey and
  * that, in rare cases, that can cost them data.
  */
 export function rangeWarningCopy(w: RangeWarning, t: T): { title: string; body: string; confirm: boolean } {

@@ -20,7 +20,7 @@ import type { LucideIcon } from 'lucide-react'
  *  - Never import from here conditionally at a call site. The arrays are always
  *    read, and they are simply empty, so the public build takes exactly the same
  *    code path as any other.
- *  - Nothing here may be required for TREK to work. Everything below is
+ *  - Nothing here may be required for Journey to work. Everything below is
  *    additive: routes that are not registered, nav entries that are not shown.
  */
 

@@ -244,8 +244,8 @@ describe('client > proxy auth challenges', () => {
     expect(sessionStorage.getItem('proxy_reauth_attempted')).toBe('1')
   })
 
-  it('FE-APIWIRE-016: an HTML 401 from TREK itself keeps the service worker (#2228)', async () => {
-    // text/html is not proof of a proxy: several of TREK's own routes answer
+  it('FE-APIWIRE-016: an HTML 401 from Journey itself keeps the service worker (#2228)', async () => {
+    // text/html is not proof of a proxy: several of Journey's own routes answer
     // res.status(401).send('Authentication required'), which Express labels
     // text/html. Tearing the worker down for one of those costs the user
     // offline mode for a wall that is not there, so confirm reachability first.

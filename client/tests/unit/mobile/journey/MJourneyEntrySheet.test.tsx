@@ -290,7 +290,7 @@ function mountSheet(sheetEntry: JourneyEntry, opts: MountOptions = {}) {
 
 const multiFileInput = () => document.querySelector('input[type="file"][multiple]') as HTMLInputElement;
 /**
- * The date is TREK's own picker (#2067 follow-up): a trigger button whose
+ * The date is Journey's own picker (#2067 follow-up): a trigger button whose
  * accessible name is the date it shows, plus a keyboard button that swaps it for
  * a DD.MM.YYYY input. `input[type="date"]` is gone — it painted itself from the
  * OS locale and took no theme.
