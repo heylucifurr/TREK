@@ -14,6 +14,13 @@ import { visibleManagedNavItems } from '../../managed'
 
 const ADDON_ICONS: Record<string, LucideIcon> = { CalendarDays, Briefcase, Globe, Compass, Bookmark }
 
+/**
+ * The addon whose tab opens the nav pill. The app is named after Journey, so it
+ * leads the bar and the pinned My Trips tab follows it; every other addon keeps
+ * the server's sort_order.
+ */
+const LEAD_ADDON_ID = 'journey'
+
 interface NavbarProps {
   tripTitle?: string
   tripId?: number | string
@@ -94,6 +101,23 @@ export default function Navbar({ tripTitle, tripId, onBack, showBack, onShare }:
     return translated !== key ? translated : addon.name
   }
 
+  // Display order of the pill's tabs: the lead addon (Journey) first, then the
+  // pinned My Trips tab, then the remaining addons in the server's sort_order.
+  const addonTab = (a: Addon) => ({
+    id: a.id,
+    path: `/${a.id}`,
+    label: getAddonName(a),
+    Icon: ADDON_ICONS[a.icon] || CalendarDays,
+  })
+  const navTabs = [
+    ...globalAddons.filter((a: Addon) => a.id === LEAD_ADDON_ID).map(addonTab),
+    { id: '__trips', path: '/dashboard', label: t('nav.myTrips'), Icon: Briefcase },
+    ...globalAddons.filter((a: Addon) => a.id !== LEAD_ADDON_ID).map(addonTab),
+    ...pagePlugins.map(p => ({ id: `plugin:${p.id}`, path: `/plugins/${p.id}`, label: p.name, Icon: resolvePluginIcon(p.icon) })),
+    // Empty in this repository — see client/src/managed.
+    ...visibleManagedNavItems(user?.role === 'admin').map(m => ({ id: `managed:${m.id}`, path: m.path, label: m.label, Icon: m.Icon })),
+  ]
+
   return (
     <nav style={{
       background: dark
@@ -165,12 +189,7 @@ export default function Navbar({ tripTitle, tripId, onBack, showBack, onShare }:
             border: `1px solid ${dark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.05)'}`,
           }}
         >
-          {[{ id: '__trips', path: '/dashboard', label: t('nav.myTrips'), Icon: Briefcase },
-            ...globalAddons.map(a => ({ id: a.id, path: `/${a.id}`, label: getAddonName(a), Icon: ADDON_ICONS[a.icon] || CalendarDays })),
-            ...pagePlugins.map(p => ({ id: `plugin:${p.id}`, path: `/plugins/${p.id}`, label: p.name, Icon: resolvePluginIcon(p.icon) })),
-            // Empty in this repository — see client/src/managed.
-            ...visibleManagedNavItems(user?.role === 'admin').map(m => ({ id: `managed:${m.id}`, path: m.path, label: m.label, Icon: m.Icon }))
-          ].map(tab => {
+          {navTabs.map(tab => {
             const isActive = location.pathname === tab.path
             return (
               <Link key={tab.id} to={tab.path}

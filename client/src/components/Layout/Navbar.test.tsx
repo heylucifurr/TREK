@@ -558,6 +558,26 @@ describe('Navbar styling and menu details', () => {
     await waitFor(() => expect(updateSetting).toHaveBeenCalledWith('dark_mode', 'dark'));
     document.documentElement.classList.remove('trek-theme-transitioning');
   });
+
+  it('FE-W5NAV-015: Journey opens the tab pill, ahead of the pinned My Trips tab', () => {
+    // Journey arrives second in the addon list and My Trips is pinned, so the
+    // pill has to hoist the addon the app is named after rather than trusting
+    // either order.
+    seedStore(useAddonStore, {
+      addons: [
+        { id: 'vacay', name: 'Vacay', icon: 'CalendarDays', type: 'global', enabled: true },
+        { id: 'journey', name: 'Journey', icon: 'Compass', type: 'global', enabled: true },
+        { id: 'atlas', name: 'Atlas', icon: 'Globe', type: 'global', enabled: true },
+      ],
+    });
+    // A page plugin from an earlier test would otherwise still be in the pill.
+    seedStore(usePluginStore, { plugins: [] });
+    render(<Navbar />);
+
+    const pill = document.querySelector('.trek-nav-pill') as HTMLElement;
+    const labels = Array.from(pill.querySelectorAll('a')).map(a => a.getAttribute('title'));
+    expect(labels).toEqual(['Journey', 'My Trips', 'Vacay', 'Atlas']);
+  });
 });
 
 /**

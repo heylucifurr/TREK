@@ -5285,6 +5285,22 @@ function runMigrations(db: Database.Database): void {
         END
       `);
     },
+    /*
+     * Journey leads the global nav.
+     *
+     * The addon shipped with sort_order 35, which put its tab last — after
+     * Vacay, Atlas and Collections — even though it is the feature the app is
+     * now named after. The nav renders global addons in sort_order order, so the
+     * fix is the row's order, not the client's.
+     *
+     * 9 keeps it ahead of Vacay (10) while staying behind the trip addons
+     * (0-7), so the global block keeps reading as one run in the admin list.
+     * The WHERE only moves rows that still carry the seeded value: an instance
+     * that has ordered its own addons another way keeps that ordering.
+     */
+    () => {
+      db.prepare(`UPDATE addons SET sort_order = 9 WHERE id = 'journey' AND sort_order = 35`).run();
+    },
   ];
 
   if (currentVersion < migrations.length) {
